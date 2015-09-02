@@ -7,7 +7,7 @@
 var React = require('react-native');
 var Home = require('./Views/home.ios.js');
 var More = require('./Views/more.ios.js');
-var Videos = require('./Views/videos.ios.js');
+var VideosNav = require('./Navigators/NavigatorVideos.ios.js');
 
 var {
     AppRegistry,
@@ -57,7 +57,7 @@ class NodersApp extends Component{
                             selectedTab: 'videos'
                         });
                     }}>
-                <Videos />
+                <VideosNav />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
                     title='Eventos'

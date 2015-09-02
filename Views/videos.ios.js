@@ -134,7 +134,7 @@ class Videos extends Component {
     render() {
         return(
             <View style={styles.container}>
-                <ListView
+                <ListView style={{flex: 1}}
                 dataSource={this.state.dataSource}
                 renderRow={this.renderBook.bind(this)}/>
             </View>

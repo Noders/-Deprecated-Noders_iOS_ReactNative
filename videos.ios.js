@@ -30,24 +30,12 @@ var styles = StyleSheet.create({
     author: {
         color: '#656565'
     },
-    red: {
-        flex: 1,
-        height: 300
-                        
-    },
-    blue: {        
-        height: 200,
-        top: 30,
-        left: 50,
-        position: 'absolute',
-        backgroundColor: 'blue'
-    },
     logo: {
         flex: 1,
-        height: 300,
+        height: 280,
     },
     nestedView: {        
-        marginTop: 220,
+        marginTop: 10,
         height: 80,
         flex: 1,        
         backgroundColor: '#333',
@@ -68,6 +56,12 @@ var styles = StyleSheet.create({
         right: 10,
         color: 'white',
         alignItems: 'flex-end'
+    },
+    celda: {
+        flex: 1,        
+        height: 300,
+        padding: 10,
+        justifyContent: 'center'
     }
 });
 
@@ -112,16 +106,13 @@ class Videos extends Component {
     renderBook(book) {
        return (
             <TouchableHighlight>
-                <View style={styles.container}>                    
-                    <View style={styles.red}>
-                        <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
-                            <View style={styles.nestedView}>
-                                <Text style={styles.title}>{book.snippet.title}</Text>
-                                <Text style={styles.duration}>{this.convert_time(book.contentDetails.duration)}</Text>
-                            </View>
-                        </Image>
-                    </View>
-                    
+                <View style={styles.celda}>                                        
+                    <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
+                        <View style={styles.nestedView}>
+                            <Text style={styles.title}>{book.snippet.title}</Text>
+                            <Text style={styles.duration}>{this.convert_time(book.contentDetails.duration)}</Text>
+                        </View>
+                    </Image>                                        
                 </View>
             </TouchableHighlight>
         );

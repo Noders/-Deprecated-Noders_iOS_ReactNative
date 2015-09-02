@@ -30,24 +30,12 @@ var styles = StyleSheet.create({
     author: {
         color: '#656565'
     },
-    red: {
-        flex: 1,
-        height: 300
-                        
-    },
-    blue: {        
-        height: 200,
-        top: 30,
-        left: 50,
-        position: 'absolute',
-        backgroundColor: 'blue'
-    },
     logo: {
         flex: 1,
-        height: 300,
+        height: 280,
     },
     nestedView: {        
-        marginTop: 220,
+        marginTop: 200,
         height: 80,
         flex: 1,        
         backgroundColor: '#333',
@@ -64,10 +52,16 @@ var styles = StyleSheet.create({
     duration: {
         textAlign: 'right',
         position: 'absolute',
-        bottom: 15,
+        bottom: 10,
         right: 10,
         color: 'white',
         alignItems: 'flex-end'
+    },
+    celda: {
+        flex: 1,        
+        height: 300,
+        padding: 10,
+        justifyContent: 'center'
     }
 });
 
@@ -105,23 +99,27 @@ class Videos extends Component {
                     dataSource: this.state.dataSource.cloneWithRows(responseData2.items),
                     isLoading: false
                 });
+            }).catch((error) => {
+                debugger;
+                console.log(error);
             }).done();
         }).done();
     }
 
+    showVideoDetail(){
+        console.log('Video Detail');
+    }
+
     renderBook(book) {
        return (
-            <TouchableHighlight>
-                <View style={styles.container}>                    
-                    <View style={styles.red}>
-                        <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
-                            <View style={styles.nestedView}>
-                                <Text style={styles.title}>{book.snippet.title}</Text>
-                                <Text style={styles.duration}>{this.convert_time(book.contentDetails.duration)}</Text>
-                            </View>
-                        </Image>
-                    </View>
-                    
+            <TouchableHighlight underlayColor='#CCC' onPress={this.showVideoDetail}>
+                <View style={styles.celda}>                                        
+                    <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
+                        <View style={styles.nestedView}>
+                            <Text style={styles.title}>{book.snippet.title}</Text>
+                            <Text style={styles.duration}>{this.convert_time(book.contentDetails.duration)}</Text>
+                        </View>
+                    </Image>                                        
                 </View>
             </TouchableHighlight>
         );
@@ -134,7 +132,7 @@ class Videos extends Component {
     render() {
         return(
             <View style={styles.container}>
-                <ListView style={{flex: 1}}
+                <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderBook.bind(this)}/>
             </View>

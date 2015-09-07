@@ -4,14 +4,25 @@ var {
 	Component,
 	View,
 	Image,
-	WebView
+	WebView,
+	Text,
+	ScrollView
 } = React;
 
 class VideoDetail extends Component {
+
+	constructor(props){
+		super(props);
+		debugger;
+	}
+
 	render() {
 		return(
-			<View style={{backgroundColor: '#FAB'}}>
-			</View>
+			<ScrollView>
+				<View style={{backgroundColor: '#222', flex: 1}}>
+					<Text style={{alignItems:'center'}}>Texto de prueba</Text>
+				</View>
+			</ScrollView>
 		);
 	}
 }

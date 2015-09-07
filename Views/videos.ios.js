@@ -1,8 +1,11 @@
 var React = require('react-native');
 var Endpoints = require('../Endpoints.js');
+var DetalleVideo = require('./video_detail.ios.js');
+var Overlay = require('react-native-overlay');
+var VibranceView = require('react-native-blur').VibranceView;
 
 var {
-    Text, View, Component, StyleSheet, ListView, TouchableHighlight, Image, ScrollView
+    Text, View, Component, StyleSheet, ListView, TouchableHighlight, Image, ScrollView, ActivityIndicatorIOS
 } = React;
 
 var styles = StyleSheet.create({
@@ -74,7 +77,7 @@ class Videos extends Component {
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
-        };
+        };        
     }
 
     componentDidMount() {            
@@ -83,6 +86,7 @@ class Videos extends Component {
 
     fetchData() {  
         debugger;
+
         fetch(Endpoints.videos_endpoint_search)
         .then((response) => response.json())
         .then((responseData) => {
@@ -106,13 +110,20 @@ class Videos extends Component {
         }).done();
     }
 
-    showVideoDetail(){
+    showVideoDetail(video){
         console.log('Video Detail');
+        this.props.navigator.push({
+            title: 'Detalle Video',
+            component: DetalleVideo,
+            passProps: {
+                selectedVideo: video
+            }
+        });
     }
 
     renderBook(book) {
        return (
-            <TouchableHighlight underlayColor='#CCC' onPress={this.showVideoDetail}>
+            <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(book)}}>
                 <View style={styles.celda}>                                        
                     <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
                         <View style={styles.nestedView}>
@@ -135,8 +146,15 @@ class Videos extends Component {
                 <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderBook.bind(this)}/>
-            </View>
-            
+                <Overlay>
+                    <VibranceView blurType="dark">
+                        <ActivityIndicatorIOS
+                            size="large"
+                            animating={true}
+                            />
+                    </VibranceView>
+                </Overlay>
+            </View>            
         );
     }
 }

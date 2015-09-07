@@ -21,7 +21,7 @@ class NavigatorVideos extends Component {
 				component: Videos,
 				title: this.state.initialTitle
 				
-			}} barTintColor='#000' titleTextColor='#FFF' style={{flex: 1}} navigationBarHidden={false}/>
+			}} barTintColor='#000' tintColor='#1ec503' titleTextColor='#FFF' style={{flex: 1}} navigationBarHidden={false}/>
 		)
 	}
 }

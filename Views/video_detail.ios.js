@@ -6,8 +6,19 @@ var {
 	Image,
 	WebView,
 	Text,
-	ScrollView
+	ScrollView,
+	StyleSheet
 } = React;
+
+var styles = StyleSheet.create({
+	container: {
+		backgroundColor: '#222',
+		flex: 1
+	},
+	scrollviewWrapper: {
+		flex: 1
+	}
+});
 
 class VideoDetail extends Component {
 
@@ -18,8 +29,8 @@ class VideoDetail extends Component {
 
 	render() {
 		return(
-			<ScrollView>
-				<View style={{backgroundColor: '#222', flex: 1}}>
+			<ScrollView style={styles.scrollviewWrapper}>
+				<View style={styles.container}>
 					<Text style={{alignItems:'center'}}>Texto de prueba</Text>
 				</View>
 			</ScrollView>

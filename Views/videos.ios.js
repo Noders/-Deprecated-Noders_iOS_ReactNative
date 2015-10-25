@@ -1,8 +1,7 @@
 var React = require('react-native');
 var Endpoints = require('../Endpoints.js');
 var DetalleVideo = require('./video_detail.ios.js');
-var Overlay = require('react-native-overlay');
-var VibranceView = require('react-native-blur').VibranceView;
+var LoadingOverlay = require('./Extras/LoadingOverlay.ios.js');
 
 var {
     Text, View, Component, StyleSheet, ListView, TouchableHighlight, Image, ScrollView, ActivityIndicatorIOS
@@ -14,12 +13,11 @@ var styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#222',
-        padding: 10,
-        height: 300
+        padding: 10
     },
     thumbnail: {
         
-        height: 300        
+        height: 280        
     },
     rightContainer: {
         flex: 1 
@@ -62,9 +60,14 @@ var styles = StyleSheet.create({
     },
     celda: {
         flex: 1,        
-        height: 300,
+        height: 280,
         padding: 10,
         justifyContent: 'center'
+    },
+    overlay: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'        
     }
 });
 
@@ -72,8 +75,7 @@ class Videos extends Component {
 
     constructor(props) {
        super(props);
-       this.state = {
-            isLoading: true,
+       this.state = {            
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
@@ -84,18 +86,16 @@ class Videos extends Component {
         this.fetchData();        
     }
 
-    fetchData() {  
-        debugger;
-
+    fetchData() {          
         fetch(Endpoints.videos_endpoint_search)
         .then((response) => response.json())
-        .then((responseData) => {
-            var shiftedArray = responseData.items.shift();
+        .then((responseData) => {            
             var videoArray = "";
             responseData.items.forEach(function(entry){
-                videoArray += entry.id.videoId + ",";
-            }); 
-            videoArray.slice(0, -1);
+                if (entry.id.kind === "youtube#video") {
+                    videoArray += entry.id.videoId + ",";
+                }                
+            });             
             var adjustedEndpoint = Endpoints.videos_endpoint.replace('{}',videoArray);
             fetch(adjustedEndpoint).then((response2) => response2.json())
             .then((responseData2) => {
@@ -121,14 +121,14 @@ class Videos extends Component {
         });
     }
 
-    renderBook(book) {
+    renderVideo(video) {
        return (
-            <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(book)}}>
+            <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(video)}}>
                 <View style={styles.celda}>                                        
-                    <Image style={styles.logo} source={{uri: book.snippet.thumbnails.high.url}}>
+                    <Image style={styles.logo} source={{uri: video.snippet.thumbnails.high.url}}>
                         <View style={styles.nestedView}>
-                            <Text style={styles.title}>{book.snippet.title}</Text>
-                            <Text style={styles.duration}>{this.convert_time(book.contentDetails.duration)}</Text>
+                            <Text style={styles.title}>{video.snippet.title}</Text>
+                            <Text style={styles.duration}>{this.convert_time(video.contentDetails.duration)}</Text>
                         </View>
                     </Image>                                        
                 </View>
@@ -145,18 +145,12 @@ class Videos extends Component {
             <View style={styles.container}>
                 <ListView
                 dataSource={this.state.dataSource}
-                renderRow={this.renderBook.bind(this)}/>
-                <Overlay>
-                    <VibranceView blurType="dark">
-                        <ActivityIndicatorIOS
-                            size="large"
-                            animating={true}
-                            />
-                    </VibranceView>
-                </Overlay>
+                renderRow={this.renderVideo.bind(this)}/>                                                        
             </View>            
         );
     }
 }
+
+
 
 module.exports = Videos;

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
 		00C302E81ABCBA2D00DB3ED1 /* libRCTImage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302C01ABCB91800DB3ED1 /* libRCTImage.a */; };
@@ -24,6 +23,10 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */; };
 		E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */; };
+		E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E29A911BA274BA00C23E4D /* libRNOverlay.a */; };
+		E8F8F3081BB8CD1900CB6D24 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = E8F8F3071BB8CD1900CB6D24 /* main.jsbundle */; };
+		E8F8F30E1BB8D53D00CB6D24 /* BlurView.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F8F30B1BB8D53D00CB6D24 /* BlurView.m */; settings = {ASSET_TAGS = (); }; };
+		E8F8F30F1BB8D53D00CB6D24 /* BlurViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E8F8F30D1BB8D53D00CB6D24 /* BlurViewManager.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,10 +100,16 @@
 			remoteGlobalIDString = 58B5119B1A9E6C1200147676;
 			remoteInfo = RCTText;
 		};
+		E8E29A901BA274BA00C23E4D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNOverlay;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		008F07F21AC5B25A0029DE68 /* main.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = main.jsbundle; sourceTree = "<group>"; };
 		00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTActionSheet.xcodeproj; path = "../node_modules/react-native/Libraries/ActionSheetIOS/RCTActionSheet.xcodeproj"; sourceTree = "<group>"; };
 		00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTGeolocation.xcodeproj; path = "../node_modules/react-native/Libraries/Geolocation/RCTGeolocation.xcodeproj"; sourceTree = "<group>"; };
 		00C302BB1ABCB91800DB3ED1 /* RCTImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTImage.xcodeproj; path = "../node_modules/react-native/Libraries/Image/RCTImage.xcodeproj"; sourceTree = "<group>"; };
@@ -122,6 +131,12 @@
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
+		E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNOverlay.xcodeproj; path = "../node_modules/react-native-overlay/RNOverlay.xcodeproj"; sourceTree = "<group>"; };
+		E8F8F3071BB8CD1900CB6D24 /* main.jsbundle */ = {isa = PBXFileReference; lastKnownFileType = text; name = main.jsbundle; path = ../main.jsbundle; sourceTree = "<group>"; };
+		E8F8F30A1BB8D53D00CB6D24 /* BlurView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurView.h; sourceTree = "<group>"; };
+		E8F8F30B1BB8D53D00CB6D24 /* BlurView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurView.m; sourceTree = "<group>"; };
+		E8F8F30C1BB8D53D00CB6D24 /* BlurViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlurViewManager.h; sourceTree = "<group>"; };
+		E8F8F30D1BB8D53D00CB6D24 /* BlurViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlurViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -221,12 +237,12 @@
 		13B07FAE1A68108700A75B9A /* NodersApp */ = {
 			isa = PBXGroup;
 			children = (
+				E8F8F3071BB8CD1900CB6D24 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
-				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			path = NodersApp;
@@ -251,6 +267,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
 				00C302B51ABCB90400DB3ED1 /* RCTGeolocation.xcodeproj */,
@@ -276,6 +293,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E8F8F3091BB8D53D00CB6D24 /* RNBlur */,
 				E8E29A591B95559F00C23E4D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* NodersApp */,
 				00E356EF1AD99517003FC87E /* NodersAppTests */,
@@ -301,6 +319,25 @@
 				E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		E8E29A8D1BA274BA00C23E4D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E8E29A911BA274BA00C23E4D /* libRNOverlay.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E8F8F3091BB8D53D00CB6D24 /* RNBlur */ = {
+			isa = PBXGroup;
+			children = (
+				E8F8F30A1BB8D53D00CB6D24 /* BlurView.h */,
+				E8F8F30B1BB8D53D00CB6D24 /* BlurView.m */,
+				E8F8F30C1BB8D53D00CB6D24 /* BlurViewManager.h */,
+				E8F8F30D1BB8D53D00CB6D24 /* BlurViewManager.m */,
+			);
+			path = RNBlur;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -384,6 +421,10 @@
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
+				{
+					ProductGroup = E8E29A8D1BA274BA00C23E4D /* Products */;
+					ProjectRef = E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -463,6 +504,13 @@
 			remoteRef = 832341B41AAA6A8300B99B32 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E8E29A911BA274BA00C23E4D /* libRNOverlay.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNOverlay.a;
+			remoteRef = E8E29A901BA274BA00C23E4D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -470,8 +518,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E8F8F3081BB8CD1900CB6D24 /* main.jsbundle in Resources */,
 				E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */,
-				008F07F31AC5B25A0029DE68 /* main.jsbundle in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -487,6 +535,8 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				E8F8F30E1BB8D53D00CB6D24 /* BlurView.m in Sources */,
+				E8F8F30F1BB8D53D00CB6D24 /* BlurViewManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +567,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NodersApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = cl.devin.NodersApp;
 				PRODUCT_NAME = NodersApp;
 			};
 			name = Debug;
@@ -533,6 +584,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/NodersApp/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = cl.devin.NodersApp;
 				PRODUCT_NAME = NodersApp;
 			};
 			name = Release;

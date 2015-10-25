@@ -7,7 +7,8 @@ var {
     View,
     Text,
     Component,
-    Image
+    Image,
+    TextInput
 } = React;
 
 var styles = StyleSheet.create({
@@ -22,6 +23,10 @@ var styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         backgroundColor: '#222'
+    },
+    txtInput: {
+        width: 220,
+        height: 35
     }
 });
 
@@ -29,8 +34,8 @@ class Home extends Component {
     render() {
         return(
         <View style={styles.container}>
-            <Image source={require('image!noders_logo')} />
-            <Text style={styles.description}>¿Por qué? Porque nos gusta</Text>
+            <Image source={require('image!noders_logo')} />            
+            <TextInput placeholder="Texto" style={styles.txtInput}/>
         </View>
         );
     }

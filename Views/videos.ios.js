@@ -34,6 +34,7 @@ var styles = StyleSheet.create({
     logo: {
         flex: 1,
         height: 280,
+        padding: 5
     },
     nestedView: {        
         marginTop: 200,
@@ -75,7 +76,8 @@ class Videos extends Component {
 
     constructor(props) {
        super(props);
-       this.state = {            
+       this.state = {   
+            isVisible: false,         
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
@@ -86,7 +88,10 @@ class Videos extends Component {
         this.fetchData();        
     }
 
-    fetchData() {          
+    fetchData() {   
+        this.setState({
+            isVisible: true
+        });     
         fetch(Endpoints.videos_endpoint_search)
         .then((response) => response.json())
         .then((responseData) => {            
@@ -101,12 +106,13 @@ class Videos extends Component {
             .then((responseData2) => {
                 this.setState({
                     dataSource: this.state.dataSource.cloneWithRows(responseData2.items),
-                    isLoading: false
+                    isVisible: false
                 });
-            }).catch((error) => {
-                debugger;
+            }).catch((error) => {                            
                 console.log(error);
             }).done();
+        }).catch((error) => {
+            console.log(error);
         }).done();
     }
 
@@ -132,7 +138,7 @@ class Videos extends Component {
                         </View>
                     </Image>                                        
                 </View>
-            </TouchableHighlight>
+            </TouchableHighlight>            
         );
     }
 
@@ -146,6 +152,7 @@ class Videos extends Component {
                 <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderVideo.bind(this)}/>                                                        
+                <LoadingOverlay isVisible={this.state.isVisible} />
             </View>            
         );
     }

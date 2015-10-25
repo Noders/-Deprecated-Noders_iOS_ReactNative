@@ -1,15 +1,17 @@
 var React = require('react-native');
 var Overlay = require('react-native-overlay');
 var Blur = require('react-native-blur').BlurView;
+var SpinKit = require('react-native-spinkit');  
 
 const {
-	Component, ActivityIndicatorIOS, StyleSheet
+	Component, ActivityIndicatorIOS, StyleSheet,View
 } = React;
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    alignItems: 'center'
   },
 })
 
@@ -17,13 +19,10 @@ class LoadingView extends Component {
     render(): ReactElement {
     	debugger;
         return (
-          <Overlay isVisible={this.props.isVisible}>
-            <Blur style={styles.background} blurType="light">
-              <ActivityIndicatorIOS
-                size="large"
-                animating={true}
-                style={styles.spinner} />
-            </Blur>
+          <Overlay isVisible={this.props.isVisible}>            
+            <View style={styles.background}>
+              <SpinKit isVisible={this.props.isVisible} size={40} type='9CubeGrid' color='#FFFFFF' />
+            </View>
           </Overlay>
         );
     }

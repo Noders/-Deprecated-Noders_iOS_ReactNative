@@ -23,9 +23,10 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		E81A01DA1BDD1D5B000F5594 /* libRNSpinkit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01D91BDD1C20000F5594 /* libRNSpinkit.a */; };
 		E81A01DE1BDD92EF000F5594 /* ShareManagerIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = E81A01DD1BDD92EF000F5594 /* ShareManagerIOS.m */; };
-		E81A01E21BDD9DF3000F5594 /* FacebookSDKStrings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E81A01DF1BDD9DF3000F5594 /* FacebookSDKStrings.bundle */; };
 		E81A01E31BDD9DF3000F5594 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */; };
 		E81A01E41BDD9DF3000F5594 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */; };
+		E81A01E61BDDA1B2000F5594 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */; };
+		E81A01ED1BDDA2DB000F5594 /* libRCTFBSDKShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */; };
 		E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */; };
 		E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */; };
 		E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E29A911BA274BA00C23E4D /* libRNOverlay.a */; };
@@ -112,6 +113,13 @@
 			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
 			remoteInfo = RNSpinkit;
 		};
+		E81A01EB1BDDA2CF000F5594 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RCTFBSDKShare;
+		};
 		E8E29A901BA274BA00C23E4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */;
@@ -144,9 +152,10 @@
 		E81A01C91BDD1C1F000F5594 /* RNSpinkit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNSpinkit.xcodeproj; path = "../node_modules/react-native-spinkit/ios/RNSpinkit.xcodeproj"; sourceTree = "<group>"; };
 		E81A01DC1BDD92EF000F5594 /* ShareManagerIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareManagerIOS.h; sourceTree = "<group>"; };
 		E81A01DD1BDD92EF000F5594 /* ShareManagerIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShareManagerIOS.m; sourceTree = "<group>"; };
-		E81A01DF1BDD9DF3000F5594 /* FacebookSDKStrings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKStrings.bundle; sourceTree = "<group>"; };
 		E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDKShare.xcodeproj; path = "../node_modules/react-native-fbsdkshare/RCTFBSDKShare.xcodeproj"; sourceTree = "<group>"; };
 		E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
 		E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNOverlay.xcodeproj; path = "../node_modules/react-native-overlay/RNOverlay.xcodeproj"; sourceTree = "<group>"; };
@@ -162,8 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E81A01ED1BDDA2DB000F5594 /* libRCTFBSDKShare.a in Frameworks */,
 				E81A01DA1BDD1D5B000F5594 /* libRNSpinkit.a in Frameworks */,
 				E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */,
+				E81A01E61BDDA1B2000F5594 /* FBSDKLoginKit.framework in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
 				00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */,
 				00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */,
@@ -289,7 +300,8 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				E81A01DF1BDD9DF3000F5594 /* FacebookSDKStrings.bundle */,
+				E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */,
+				E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */,
 				E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */,
 				E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */,
 				E81A01C91BDD1C1F000F5594 /* RNSpinkit.xcodeproj */,
@@ -353,6 +365,14 @@
 				E81A01DD1BDD92EF000F5594 /* ShareManagerIOS.m */,
 			);
 			name = ShareExtension;
+			sourceTree = "<group>";
+		};
+		E81A01E81BDDA2CF000F5594 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		E8E29A591B95559F00C23E4D /* Fonts */ = {
@@ -432,6 +452,10 @@
 				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
+				},
+				{
+					ProductGroup = E81A01E81BDDA2CF000F5594 /* Products */;
+					ProjectRef = E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -563,6 +587,13 @@
 			remoteRef = E81A01D81BDD1C20000F5594 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTFBSDKShare.a;
+			remoteRef = E81A01EB1BDDA2CF000F5594 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		E8E29A911BA274BA00C23E4D /* libRNOverlay.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -580,7 +611,6 @@
 				E8F8F3081BB8CD1900CB6D24 /* main.jsbundle in Resources */,
 				E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				E81A01E21BDD9DF3000F5594 /* FacebookSDKStrings.bundle in Resources */,
 				E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);

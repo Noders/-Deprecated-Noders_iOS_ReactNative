@@ -82,7 +82,7 @@ class VideoDetail extends Component {
 					<TouchableOpacity onPress={() => {}} style={styles.button}>
 						<Image style={styles.sharelogo} source={{uri: 'twitterlogo'}} />
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => {ShareManagerIOS.shareWithWhatsapp("http://fakelinknodersyoutube", function() {})}} style={styles.button}>
+					<TouchableOpacity onPress={() => {ShareManagerIOS.shareWithWhatsapp("https://www.youtube.com/watch?v=" + this.props.selectedVideo.id, function() {})}} style={styles.button}>
 						<Image style={styles.sharelogo} source={{uri: 'whatsapplogo'}} />
 					</TouchableOpacity>
 				</View>	

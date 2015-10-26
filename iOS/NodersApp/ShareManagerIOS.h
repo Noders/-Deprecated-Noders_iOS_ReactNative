@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import <RCTBridgeModule.h>
+#import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface ShareManagerIOS : NSObject <RCTBridgeModule>
 

@@ -18,7 +18,7 @@ class NavigatorPodcast extends Component {
 	render() {
 		return (
 			<NavigatorIOS initialRoute={{
-				component: Videos,
+				component: Podcast,
 				title: this.state.initialTitle
 				
 			}} barTintColor='#000' tintColor='#1ec503' titleTextColor='#FFF' style={{flex: 1}} navigationBarHidden={false}/>

@@ -26,7 +26,9 @@
 		E81A01E31BDD9DF3000F5594 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */; };
 		E81A01E41BDD9DF3000F5594 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */; };
 		E81A01E61BDDA1B2000F5594 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */; };
-		E81A01ED1BDDA2DB000F5594 /* libRCTFBSDKShare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */; };
+		E841A2B01BE05E6300A8B240 /* libRCTYouTube.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E841A2AC1BE05E1A00A8B240 /* libRCTYouTube.a */; };
+		E841A2B21BE05E7700A8B240 /* YTPlayerView-iframe-player.html in Resources */ = {isa = PBXBuildFile; fileRef = E841A2B11BE05E7700A8B240 /* YTPlayerView-iframe-player.html */; };
+		E841A2B61BE05F0100A8B240 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E841A2B51BE05F0100A8B240 /* FBSDKShareKit.framework */; };
 		E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */; };
 		E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */; };
 		E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E29A911BA274BA00C23E4D /* libRNOverlay.a */; };
@@ -113,9 +115,16 @@
 			remoteGlobalIDString = D42CB3511B2538DE00FD0AE2;
 			remoteInfo = RNSpinkit;
 		};
-		E81A01EB1BDDA2CF000F5594 /* PBXContainerItemProxy */ = {
+		E841A2AB1BE05E1A00A8B240 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */;
+			containerPortal = E841A29D1BE05E1900A8B240 /* RCTYouTube.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8BDB9BC91B4289AE00EF9FEF;
+			remoteInfo = RCTYouTube;
+		};
+		E841A2BB1BE05F2600A8B240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E841A2B71BE05F2600A8B240 /* RCTFBSDKShare.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RCTFBSDKShare;
@@ -155,7 +164,10 @@
 		E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDKShare.xcodeproj; path = "../node_modules/react-native-fbsdkshare/RCTFBSDKShare.xcodeproj"; sourceTree = "<group>"; };
+		E841A29D1BE05E1900A8B240 /* RCTYouTube.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTYouTube.xcodeproj; path = "../node_modules/react-native-youtube/RCTYouTube.xcodeproj"; sourceTree = "<group>"; };
+		E841A2B11BE05E7700A8B240 /* YTPlayerView-iframe-player.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = "YTPlayerView-iframe-player.html"; path = "../node_modules/react-native-youtube/Assets/YTPlayerView-iframe-player.html"; sourceTree = "<group>"; };
+		E841A2B51BE05F0100A8B240 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
+		E841A2B71BE05F2600A8B240 /* RCTFBSDKShare.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTFBSDKShare.xcodeproj; path = "../node_modules/react-native-fbsdkshare/RCTFBSDKShare.xcodeproj"; sourceTree = "<group>"; };
 		E8E29A5A1B9555A800C23E4D /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		E8E29A5B1B9555A800C23E4D /* TitilliumWeb-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TitilliumWeb-Regular.ttf"; sourceTree = "<group>"; };
 		E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNOverlay.xcodeproj; path = "../node_modules/react-native-overlay/RNOverlay.xcodeproj"; sourceTree = "<group>"; };
@@ -171,7 +183,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E81A01ED1BDDA2DB000F5594 /* libRCTFBSDKShare.a in Frameworks */,
+				E841A2B01BE05E6300A8B240 /* libRCTYouTube.a in Frameworks */,
 				E81A01DA1BDD1D5B000F5594 /* libRNSpinkit.a in Frameworks */,
 				E8E29A921BA274BF00C23E4D /* libRNOverlay.a in Frameworks */,
 				E81A01E61BDDA1B2000F5594 /* FBSDKLoginKit.framework in Frameworks */,
@@ -184,6 +196,7 @@
 				E81A01E31BDD9DF3000F5594 /* FBSDKCoreKit.framework in Frameworks */,
 				139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */,
 				E81A01E41BDD9DF3000F5594 /* FBSDKShareKit.framework in Frameworks */,
+				E841A2B61BE05F0100A8B240 /* FBSDKShareKit.framework in Frameworks */,
 				832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */,
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
@@ -300,10 +313,12 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */,
+				E841A2B71BE05F2600A8B240 /* RCTFBSDKShare.xcodeproj */,
+				E841A29D1BE05E1900A8B240 /* RCTYouTube.xcodeproj */,
 				E81A01E51BDDA1B2000F5594 /* FBSDKLoginKit.framework */,
 				E81A01E01BDD9DF3000F5594 /* FBSDKCoreKit.framework */,
 				E81A01E11BDD9DF3000F5594 /* FBSDKShareKit.framework */,
+				E841A2B51BE05F0100A8B240 /* FBSDKShareKit.framework */,
 				E81A01C91BDD1C1F000F5594 /* RNSpinkit.xcodeproj */,
 				E8E29A8C1BA274BA00C23E4D /* RNOverlay.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -331,6 +346,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				E841A2B11BE05E7700A8B240 /* YTPlayerView-iframe-player.html */,
 				E8F8F3091BB8D53D00CB6D24 /* RNBlur */,
 				E8E29A591B95559F00C23E4D /* Fonts */,
 				13B07FAE1A68108700A75B9A /* NodersApp */,
@@ -367,10 +383,18 @@
 			name = ShareExtension;
 			sourceTree = "<group>";
 		};
-		E81A01E81BDDA2CF000F5594 /* Products */ = {
+		E841A29E1BE05E1900A8B240 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */,
+				E841A2AC1BE05E1A00A8B240 /* libRCTYouTube.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E841A2B81BE05F2600A8B240 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E841A2BC1BE05F2600A8B240 /* libRCTFBSDKShare.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -413,6 +437,7 @@
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
+				E841A2BD1BE0688F00A8B240 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -454,8 +479,8 @@
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
 				{
-					ProductGroup = E81A01E81BDDA2CF000F5594 /* Products */;
-					ProjectRef = E81A01E71BDDA2CF000F5594 /* RCTFBSDKShare.xcodeproj */;
+					ProductGroup = E841A2B81BE05F2600A8B240 /* Products */;
+					ProjectRef = E841A2B71BE05F2600A8B240 /* RCTFBSDKShare.xcodeproj */;
 				},
 				{
 					ProductGroup = 00C302B61ABCB90400DB3ED1 /* Products */;
@@ -488,6 +513,10 @@
 				{
 					ProductGroup = 139FDEE71B06529A00C62182 /* Products */;
 					ProjectRef = 139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */;
+				},
+				{
+					ProductGroup = E841A29E1BE05E1900A8B240 /* Products */;
+					ProjectRef = E841A29D1BE05E1900A8B240 /* RCTYouTube.xcodeproj */;
 				},
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
@@ -587,11 +616,18 @@
 			remoteRef = E81A01D81BDD1C20000F5594 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		E81A01EC1BDDA2CF000F5594 /* libRCTFBSDKShare.a */ = {
+		E841A2AC1BE05E1A00A8B240 /* libRCTYouTube.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRCTYouTube.a;
+			remoteRef = E841A2AB1BE05E1A00A8B240 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		E841A2BC1BE05F2600A8B240 /* libRCTFBSDKShare.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libRCTFBSDKShare.a;
-			remoteRef = E81A01EB1BDDA2CF000F5594 /* PBXContainerItemProxy */;
+			remoteRef = E841A2BB1BE05F2600A8B240 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		E8E29A911BA274BA00C23E4D /* libRNOverlay.a */ = {
@@ -610,6 +646,7 @@
 			files = (
 				E8F8F3081BB8CD1900CB6D24 /* main.jsbundle in Resources */,
 				E8E29A5D1B9555A800C23E4D /* TitilliumWeb-Regular.ttf in Resources */,
+				E841A2B21BE05E7700A8B240 /* YTPlayerView-iframe-player.html in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E8E29A5C1B9555A800C23E4D /* Roboto-Regular.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
@@ -617,6 +654,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E841A2BD1BE0688F00A8B240 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Fabric.framework/run 21c0a8a40563410b115df500f378fab007ad6f62 e517a3fe9d5654202826c8ba5350484e76207f765b7e769ffa96443ed3aa279d";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		13B07F871A680F5B00A75B9A /* Sources */ = {

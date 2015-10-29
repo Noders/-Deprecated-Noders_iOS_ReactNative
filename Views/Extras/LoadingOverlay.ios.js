@@ -16,12 +16,15 @@ const styles = StyleSheet.create({
 })
 
 class LoadingView extends Component {
+  constructor(props) {
+    super(props);
+    
+  }
     render(): ReactElement {
-    	debugger;
         return (
           <Overlay isVisible={this.props.isVisible}>            
             <View style={styles.background}>
-              <SpinKit isVisible={this.props.isVisible} size={40} type='9CubeGrid' color='#FFFFFF' />
+              <SpinKit isVisible={this.props.isVisible} size={40} type={this.props.icon} color='#FFFFFF' />
             </View>
           </Overlay>
         );

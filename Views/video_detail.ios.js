@@ -1,5 +1,7 @@
 var React = require('react-native');
 var ShareManagerIOS = require('NativeModules').ShareManagerIOS;
+var YouTube = require('react-native-youtube');
+var LoadingOverlay = require('./Extras/LoadingOverlay.ios.js');
 
 var {
 	Component,
@@ -23,7 +25,9 @@ var styles = StyleSheet.create({
 	},
 	thumbnail: {
 		height: 280,
-		flex: 1
+		flex: 1,
+		justifyContent: 'center',
+		alignItems: 'center'
 	},
 	videoTitle: {
 		alignItems:'center',
@@ -55,6 +59,11 @@ var styles = StyleSheet.create({
 		borderRadius: 15,
 		flex: 1,
 		marginBottom: 5
+	},
+	playbtn: {
+		height: 96,
+		width: 96,
+		backgroundColor: 'transparent'
 	}
 });
 
@@ -62,7 +71,37 @@ class VideoDetail extends Component {
 
 	constructor(props){
 		super(props);	
-		debugger;	
+			this.state = {
+			videoPlaying: false,
+			isVisible: false
+		}
+	}
+
+	_videoPlay(){		
+		this.setState({
+			isVisible: true,
+			videoPlaying: true
+		});
+	}
+
+	_videoReady(e){
+		if (e.state == 'playing') {
+			this.setState({
+				isVisible: false,
+				isPlaying: true
+			});
+		}
+		if(e.state == 'paused') {
+			this.setState({
+				isPlaying: false
+			});
+		}
+		if (e.state == 'ended') {
+			this.setState({
+				isPlaying: false
+			});
+			
+		}
 	}
 
 	render() {
@@ -70,10 +109,15 @@ class VideoDetail extends Component {
 			<View style={{flex: 1}}>
 				<ScrollView style={styles.scrollviewWrapper}>
 					<View style={styles.container}>
-						<Image style={styles.thumbnail} source={{uri: this.props.selectedVideo.snippet.thumbnails.high.url}} />
+						<Image style={styles.thumbnail} source={{uri: this.props.selectedVideo.snippet.thumbnails.high.url}}>
+							<TouchableOpacity onPress={this._videoPlay.bind(this)} style={{backgroundColor: 'transparent'}}>
+								<Image source={{uri: 'playbtn'}} style={styles.playbtn} />
+							</TouchableOpacity>
+						</Image>
 						<Text style={styles.videoTitle}>{this.props.selectedVideo.snippet.title}</Text>
 						<Text style={styles.descriptionText}>{this.props.selectedVideo.snippet.description}</Text>										
-					</View>				
+						<YouTube onChangeState={this._videoReady.bind(this)} videoId={this.props.selectedVideo.id} play={this.state.videoPlaying} playsInline={false} controls={1} hidden={false} />
+					</View>					
 				</ScrollView>
 				<View style={styles.buttonsContainer}>
 					<TouchableOpacity onPress={() => {}} style={styles.button}>
@@ -85,7 +129,8 @@ class VideoDetail extends Component {
 					<TouchableOpacity onPress={() => {ShareManagerIOS.shareWithWhatsapp("https://www.youtube.com/watch?v=" + this.props.selectedVideo.id, function() {})}} style={styles.button}>
 						<Image style={styles.sharelogo} source={{uri: 'whatsapplogo'}} />
 					</TouchableOpacity>
-				</View>	
+				</View>
+				<LoadingOverlay isVisible={this.state.isVisible} icon="Circle"/>	
 			</View>
 		);
 	}

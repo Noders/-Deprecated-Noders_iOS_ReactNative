@@ -152,7 +152,7 @@ class Videos extends Component {
                 <ListView
                 dataSource={this.state.dataSource}
                 renderRow={this.renderVideo.bind(this)}/>                                                        
-                <LoadingOverlay isVisible={this.state.isVisible} />
+                <LoadingOverlay icon="9CubeGrid" isVisible={this.state.isVisible} style={{flex: 1,alignSelf: 'center'}}/>
             </View>            
         );
     }

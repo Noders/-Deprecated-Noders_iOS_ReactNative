@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <RCTBridgeModule.h>
 
-@interface JSXMLParser : NSObject
+@interface JSXMLParser : NSObject <RCTBridgeModule, NSXMLParserDelegate>
+
+@property (nonatomic, strong) NSXMLParser *parser;
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) NSMutableDictionary *item;
+@property (nonatomic, strong) NSMutableString *elementValue;
+@property (nonatomic, assign) BOOL itemFound;
 
 @end

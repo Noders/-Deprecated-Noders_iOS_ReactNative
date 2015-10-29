@@ -2,6 +2,13 @@ var React = require('react-native');
 var ShareManagerIOS = require('NativeModules').ShareManagerIOS;
 var YouTube = require('react-native-youtube');
 var LoadingOverlay = require('./Extras/LoadingOverlay.ios.js');
+var FBSDKShare = require('react-native-fbsdkshare');
+var KDSocialShare = require('NativeModules').KDSocialShare;
+
+var {
+  FBSDKShareDialog,
+  FBSDKShareLinkContent,
+} = FBSDKShare;
 
 var {
 	Component,
@@ -17,7 +24,8 @@ var {
 var styles = StyleSheet.create({
 	container: {
 		backgroundColor: '#222',
-		flex: 1
+		flex: 1,
+		marginBottom: 10
 	},
 	scrollviewWrapper: {
 		flex: 1,
@@ -41,6 +49,7 @@ var styles = StyleSheet.create({
 	descriptionText: {
 		color: '#FFF',
 		marginLeft: 30,
+		marginRight: 30,
 		marginTop: 10
 	},
 	sharelogo: {
@@ -100,8 +109,36 @@ class VideoDetail extends Component {
 			this.setState({
 				isPlaying: false
 			});
-			
+
 		}
+	}
+
+	_facebookShare(){
+		console.log(this.props.selectedVideo.snippet.title);
+		console.log(this.props.selectedVideo.snippet.description);
+		var linkContent = new FBSDKShareLinkContent("https://www.youtube.com/watch?v=" + this.props.selectedVideo.id, "Esto es una prueba de lo que sale aqui", 'Noders', null);
+		FBSDKShareDialog.show(linkContent, (error, result) => {
+		  if (!error) {
+		    if (result.isCancelled) {
+		      alert('Share canceled.');
+		    } else {
+		      alert('Thanks for sharing!');
+		    }
+		  } else {
+		    alert('Error sharing.');
+		  }
+		});
+	}
+
+	_twitterShare(){
+		KDSocialShare.tweet({
+	        'text': 'Revisa el siguiente enlaze de Noders',
+    	    'link': "https://www.youtube.com/watch?v=" + this.props.selectedVideo.id,
+        	'imagelink':this.props.selectedVideo.snippet.thumbnails.high,        
+	    },
+	    (results) => {
+	        console.log(results);
+	    });
 	}
 
 	render() {
@@ -120,10 +157,10 @@ class VideoDetail extends Component {
 					</View>					
 				</ScrollView>
 				<View style={styles.buttonsContainer}>
-					<TouchableOpacity onPress={() => {}} style={styles.button}>
+					<TouchableOpacity onPress={this._facebookShare.bind(this)} style={styles.button}>
 						<Image style={styles.sharelogo} source={{uri: 'facebooklogo'}} />
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => {}} style={styles.button}>
+					<TouchableOpacity onPress={this._twitterShare.bind(this)} style={styles.button}>
 						<Image style={styles.sharelogo} source={{uri: 'twitterlogo'}} />
 					</TouchableOpacity>
 					<TouchableOpacity onPress={() => {ShareManagerIOS.shareWithWhatsapp("https://www.youtube.com/watch?v=" + this.props.selectedVideo.id, function() {})}} style={styles.button}>

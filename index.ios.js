@@ -6,7 +6,7 @@
 
 var React = require('react-native');
 var Home = require('./Views/home.ios.js');
-var More = require('./Views/more.ios.js');
+var Podcast = require('./Views/podcast.ios.js');
 var VideosNav = require('./Navigators/NavigatorVideos.ios.js');
 
 var {
@@ -60,15 +60,15 @@ class NodersApp extends Component{
                 <VideosNav />
                 </TabBarIOS.Item>
                 <TabBarIOS.Item
-                    title='Eventos'
-                    selected={this.state.selectedTab === 'more'}
-                    icon={{uri:require('image!events')}}                        
+                    title='Podcast'
+                    selected={this.state.selectedTab === 'podcast'}
+                    icon={{uri:require('image!podcast')}}                         
                     onPress={() => {
                         this.setState({
-                            selectedTab: 'more'
+                            selectedTab: 'podcast'
                         });
                     }}>
-                <More />
+                <Podcast />
                 </TabBarIOS.Item>                    
             </TabBarIOS>
         )

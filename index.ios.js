@@ -6,7 +6,7 @@
 
 var React = require('react-native');
 var Home = require('./Views/home.ios.js');
-var Podcast = require('./Views/podcast.ios.js');
+var PodcastNav = require('./Navigators/NavigatorPodcast.ios.js');
 var VideosNav = require('./Navigators/NavigatorVideos.ios.js');
 
 var {
@@ -68,7 +68,7 @@ class NodersApp extends Component{
                             selectedTab: 'podcast'
                         });
                     }}>
-                <Podcast />
+                <PodcastNav />
                 </TabBarIOS.Item>                    
             </TabBarIOS>
         )

@@ -18,7 +18,7 @@ RCT_EXPORT_METHOD(parseXMLString:(NSString *)xml callback:(RCTResponseSenderBloc
   parser.delegate = self;
   itemFound = false;
   [parser parse];
-  callback(items);
+  callback(@[items]);
 }
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary<NSString *,NSString *> *)attributeDict{
@@ -27,6 +27,9 @@ RCT_EXPORT_METHOD(parseXMLString:(NSString *)xml callback:(RCTResponseSenderBloc
   }
   if ([elementName isEqualToString:@"item"]) {
     item = [[NSMutableDictionary alloc] init];
+  }
+  if ([elementName isEqualToString:@"enclosure"]) {
+    _enclosureURL = [attributeDict valueForKey:@"url"];
   }
   elementValue = [@"" mutableCopy];
 }
@@ -37,12 +40,19 @@ RCT_EXPORT_METHOD(parseXMLString:(NSString *)xml callback:(RCTResponseSenderBloc
     item = nil;
   }
   if (item != nil) {
-    [item setObject:elementValue forKey:elementName];
+    if ([elementName isEqualToString:@"enclosure"]) {
+      [item setObject:_enclosureURL forKey:@"enclosure"];
+      _enclosureURL = @"";
+    } else {
+      [item setObject:elementValue forKey:elementName];
+    }
   }
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
-  elementValue = [string mutableCopy];
+  [elementValue appendString:string];
 }
+
+
 
 @end

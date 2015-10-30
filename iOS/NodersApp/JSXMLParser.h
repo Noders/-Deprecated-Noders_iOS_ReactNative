@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSMutableArray *items;
 @property (nonatomic, strong) NSMutableDictionary *item;
 @property (nonatomic, strong) NSMutableString *elementValue;
+@property (nonatomic, strong) NSString *enclosureURL;
 @property (nonatomic, assign) BOOL itemFound;
 
 @end

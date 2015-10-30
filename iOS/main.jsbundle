@@ -1395,7 +1395,7 @@ throw new TypeError(
 
 var index=findIndex.call(this,predicate,context);
 return index === -1?undefined:this[index];}});}})();
-__d('NodersApp/index.ios.js',["image!home","image!videos","image!events","react-native/Libraries/react-native/react-native.js","NodersApp/Views/home.ios.js","NodersApp/Views/more.ios.js","NodersApp/Navigators/NavigatorVideos.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+__d('NodersApp/index.ios.js',["image!home","image!videos","image!podcast","react-native/Libraries/react-native/react-native.js","NodersApp/Views/home.ios.js","NodersApp/Navigators/NavigatorPodcast.ios.js","NodersApp/Navigators/NavigatorVideos.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
 
 
@@ -1403,7 +1403,7 @@ __d('NodersApp/index.ios.js',["image!home","image!videos","image!events","react-
 
 var React=require('react-native/Libraries/react-native/react-native.js');
 var Home=require('NodersApp/Views/home.ios.js');
-var More=require('NodersApp/Views/more.ios.js');
+var PodcastNav=require('NodersApp/Navigators/NavigatorPodcast.ios.js');
 var VideosNav=require('NodersApp/Navigators/NavigatorVideos.ios.js');var 
 
 
@@ -1457,15 +1457,15 @@ selectedTab:'videos'});}},
 React.createElement(VideosNav,null)),
 
 React.createElement(TabBarIOS.Item,{
-title:'Eventos',
-selected:this.state.selectedTab === 'more',
-icon:{uri:require('image!events')},
+title:'Podcast',
+selected:this.state.selectedTab === 'podcast',
+icon:{uri:require('image!podcast')},
 onPress:function(){
 _this.setState({
-selectedTab:'more'});}},
+selectedTab:'podcast'});}},
 
 
-React.createElement(More,null))));}}]);return NodersApp;})(Component);
+React.createElement(PodcastNav,null))));}}]);return NodersApp;})(Component);
 
 
 
@@ -51603,16 +51603,54 @@ module.exports = Home;
 });
 __d('image!noders_logo',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/noders_logo.imageset/noders_logo.png","uri":"noders_logo","width":200,"height":57,"deprecated":true};
 });
-__d('NodersApp/Views/more.ios.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+__d('NodersApp/Navigators/NavigatorPodcast.ios.js',["react-native/Libraries/react-native/react-native.js","NodersApp/Views/podcast.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
-var React=require('react-native/Libraries/react-native/react-native.js');var 
+var React=require('react-native/Libraries/react-native/react-native.js');
+var Podcast=require('NodersApp/Views/podcast.ios.js');var 
+
+
+NavigatorIOS=
+
+React.NavigatorIOS;var Component=React.Component;var 
+
+NavigatorPodcast=(function(_Component){_inherits(NavigatorPodcast,_Component);
+function NavigatorPodcast(props){_classCallCheck(this,NavigatorPodcast);
+_get(Object.getPrototypeOf(NavigatorPodcast.prototype),'constructor',this).call(this,props);
+this.state = {
+initialTitle:'Podcasts'};}_createClass(NavigatorPodcast,[{key:'render',value:
+
+
+function render(){
+return (
+React.createElement(NavigatorIOS,{initialRoute:{
+component:Podcast,
+title:this.state.initialTitle},
+
+barTintColor:'#000',tintColor:'#1ec503',titleTextColor:'#FFF',style:{flex:1},navigationBarHidden:false}));}}]);return NavigatorPodcast;})(Component);
+
+
+
+
+module.exports = NavigatorPodcast;
+});
+__d('NodersApp/Views/podcast.ios.js',["NativeModules","NativeModules","react-native/Libraries/react-native/react-native.js","NodersApp/Views/Extras/LoadingOverlay.ios.js","NodersApp/Endpoints.js","NodersApp/Views/Extras/PodcastRow.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
+
+var React=require('react-native/Libraries/react-native/react-native.js');
+var LoadingOverlay=require('NodersApp/Views/Extras/LoadingOverlay.ios.js');
+var Endpoint=require('NodersApp/Endpoints.js');
+var JSXMLParser=require('NativeModules').JSXMLParser;
+var JSScreenManager=require('NativeModules').JSScreenManager;
+var PodcastRow=require('NodersApp/Views/Extras/PodcastRow.js');var 
 
 
 StyleSheet=
 
 
 
-React.StyleSheet;var View=React.View;var Text=React.Text;var Component=React.Component;
+
+
+
+React.StyleSheet;var View=React.View;var Text=React.Text;var Component=React.Component;var ListView=React.ListView;var TouchableOpacity=React.TouchableOpacity;var Image=React.Image;
 
 var styles=StyleSheet.create({
 description:{
@@ -51624,23 +51662,392 @@ container:{
 flex:1,
 justifyContent:'center',
 alignItems:'center',
-backgroundColor:'#654321'}});var 
+backgroundColor:'#222'},
+
+podRow:{
+height:100,
+
+borderBottomWidth:1,
+borderBottomColor:'#444',
+marginLeft:5,
+marginRight:5,
+flexDirection:'row'},
+
+titleText:{
+color:'#FFF'},
+
+titleWrapper:{
+flex:1,
+backgroundColor:'#123'},
+
+
+playBtn:{
+height:40,
+width:40,
+flex:0.2}});
+
+
+var rowWidth=0;var 
+More=(function(_Component){_inherits(More,_Component);
+
+function More(props){_classCallCheck(this,More);
+_get(Object.getPrototypeOf(More.prototype),'constructor',this).call(this,props);
+this.state = {
+isVisible:false,
+dataSource:new ListView.DataSource({
+rowHasChanged:function(row1,row2){return row1 !== row2;}})};
 
 
 
-More=(function(_Component){_inherits(More,_Component);function More(){_classCallCheck(this,More);_get(Object.getPrototypeOf(More.prototype),'constructor',this).apply(this,arguments);}_createClass(More,[{key:'render',value:
+JSScreenManager.getScreenWidth(function(width){
+rowWidth = width;});}_createClass(More,[{key:'componentDidMount',value:
+
+
+
+function componentDidMount(){
+var blockThis=this;
+fetch(Endpoint.podcast_endpoint).
+then(function(response){
+JSXMLParser.parseXMLString(response._bodyText,function(parsedJSON){
+blockThis.setState({
+dataSource:blockThis.state.dataSource.cloneWithRows(parsedJSON)});});}).
+
+
+
+done();}},{key:'render',value:
+
+
 function render(){
 return (
 React.createElement(View,{style:styles.container},
-React.createElement(Text,{style:styles.description},'This is the second tab')));}}]);return More;})(Component);
+React.createElement(ListView,{
+dataSource:this.state.dataSource,
+renderRow:this.renderPodcast.bind(this),style:{paddingBottom:30}}),
+React.createElement(LoadingOverlay,{icon:'9CubeGrid',isVisible:this.state.isVisible,style:{flex:1,alignSelf:'center'}})));}},{key:'renderPodcast',value:
 
 
 
+
+function renderPodcast(row){
+return (
+React.createElement(PodcastRow,{image:'playcircle',podTitle:row.title,width:rowWidth,url:row.enclosure}));}},{key:'_playPodcast',value:
+
+
+
+function _playPodcast(pod){}}]);return More;})(Component);
 
 
 
 
 module.exports = More;
+});
+__d('NodersApp/Views/Extras/LoadingOverlay.ios.js',["Overlay","react-native/Libraries/react-native/react-native.js","react-native-blur/index.js","react-native-spinkit/index.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var React=require('react-native/Libraries/react-native/react-native.js');
+var Overlay=require('Overlay');
+var Blur=require('react-native-blur/index.js').BlurView;
+var SpinKit=require('react-native-spinkit/index.ios.js');const 
+
+
+Component=
+React.Component;const ActivityIndicatorIOS=React.ActivityIndicatorIOS;const StyleSheet=React.StyleSheet;const View=React.View;
+
+const styles=StyleSheet.create({
+background:{
+flex:1,
+justifyContent:'center',
+alignItems:'center'}});var 
+
+
+
+LoadingView=(function(_Component){_inherits(LoadingView,_Component);
+function LoadingView(props){_classCallCheck(this,LoadingView);
+_get(Object.getPrototypeOf(LoadingView.prototype),'constructor',this).call(this,props);}_createClass(LoadingView,[{key:'render',value:
+
+
+function render(){
+return (
+React.createElement(Overlay,{isVisible:this.props.isVisible},
+React.createElement(View,{style:styles.background},
+React.createElement(SpinKit,{isVisible:this.props.isVisible,size:40,type:this.props.icon,color:'#FFFFFF'}))));}}]);return LoadingView;})(Component);
+
+
+
+
+
+
+module.exports = LoadingView;
+});
+__d('Overlay',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';
+
+
+
+
+
+
+var React=require('react-native/Libraries/react-native/react-native.js');var 
+
+View=
+
+
+
+React.View;var PropTypes=React.PropTypes;var StyleSheet=React.StyleSheet;var requireNativeComponent=React.requireNativeComponent;
+
+
+
+
+
+var Overlay=React.createClass({
+propTypes:{
+
+
+
+
+aboveStatusBar:React.PropTypes.bool,
+
+
+
+
+
+isVisible:React.PropTypes.bool},
+
+
+getDefaultProps:function(){
+return {
+aboveStatusBar:false,
+isVisible:false};},
+
+
+
+render:function(){var 
+
+isVisible=
+this.props.isVisible;
+
+if(this.props.isVisible){
+return (
+React.createElement(RNOverlay,{isVisible:true,style:styles.container,pointerEvents:'none',aboveStatusBar:this.props.aboveStatusBar},
+React.Children.map(this.props.children,React.addons.cloneWithProps)));}else 
+
+
+{
+return React.createElement(View,null);}}});
+
+
+
+
+var RNOverlay=requireNativeComponent('RNOverlay',Overlay);
+
+var styles=StyleSheet.create({
+container:{
+position:'absolute',
+top:0,
+bottom:0,
+left:0,
+right:0,
+borderWidth:0,
+backgroundColor:'transparent'}});
+
+
+
+module.exports = Overlay;
+});
+__d('react-native-blur/index.js',["react-native-blur/src/BlurView.js","react-native-blur/src/VibrancyView.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  const BlurView=require('react-native-blur/src/BlurView.js');
+const VibrancyView=require('react-native-blur/src/VibrancyView.js');
+
+module.exports = {
+BlurView:BlurView,
+VibrancyView:VibrancyView};
+});
+__d('react-native-blur/src/BlurView.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}const React=require('react-native/Libraries/react-native/react-native.js');const 
+
+requireNativeComponent=
+
+React.requireNativeComponent;const Component=React.Component;var 
+
+BlurView=(function(_Component){_inherits(BlurView,_Component);function BlurView(){_classCallCheck(this,BlurView);_get(Object.getPrototypeOf(BlurView.prototype),'constructor',this).apply(this,arguments);}_createClass(BlurView,[{key:'render',value:
+function render(){
+return React.createElement(NativeBlurView,this.props);}}]);return BlurView;})(Component);
+
+
+
+BlurView.propTypes = {
+blurType:React.PropTypes.string};
+
+
+const NativeBlurView=requireNativeComponent('BlurView',BlurView);
+
+module.exports = BlurView;
+});
+__d('react-native-blur/src/VibrancyView.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}const React=require('react-native/Libraries/react-native/react-native.js');const 
+
+requireNativeComponent=
+
+React.requireNativeComponent;const Component=React.Component;var 
+
+VibrancyView=(function(_Component){_inherits(VibrancyView,_Component);function VibrancyView(){_classCallCheck(this,VibrancyView);_get(Object.getPrototypeOf(VibrancyView.prototype),'constructor',this).apply(this,arguments);}_createClass(VibrancyView,[{key:'render',value:
+function render(){
+return React.createElement(NativeVibrancyView,this.props);}}]);return VibrancyView;})(Component);
+
+
+
+VibrancyView.propTypes = {
+blurType:React.PropTypes.string};
+
+
+const NativeVibrancyView=requireNativeComponent('VibrancyView',VibrancyView);
+
+module.exports = VibrancyView;
+});
+__d('react-native-spinkit/index.ios.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var React=require('react-native/Libraries/react-native/react-native.js');var 
+
+PropTypes=
+
+
+React.PropTypes;var requireNativeComponent=React.requireNativeComponent;var View=React.View;
+
+var Spinkit=React.createClass({
+propTypes:{
+type:PropTypes.string,
+color:PropTypes.string,
+size:PropTypes.number,
+isVisible:PropTypes.bool},
+
+
+getDefaultProps:function(){
+return {
+size:37,
+color:"#000000",
+isVisible:true};},
+
+
+
+render:function(){
+var size={height:this.props.size,width:this.props.size};
+
+if(!this.props.isVisible)return React.createElement(View,null);
+return (
+React.createElement(RNSpinkit,{
+type:this.props.type,
+size:this.props.size,
+color:this.props.color,
+style:[size,this.props.style]}));}});
+
+
+
+
+
+
+var RNSpinkit=requireNativeComponent('RNSpinkit',Spinkit);
+
+
+module.exports = Spinkit;
+});
+__d('NodersApp/Endpoints.js',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {
+'videos_endpoint_search':'https://www.googleapis.com/youtube/v3/search?key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c&channelId=UC7tUsO3S7424TMcgSCUOCow&part=snippet,id&order=date&maxResults=50',
+'videos_endpoint':'https://www.googleapis.com/youtube/v3/videos?part=id,snippet,contentDetails&id={}&key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c',
+'podcast_endpoint':'http://noderscast.noders.com/feed/podcast'};
+});
+__d('NodersApp/Views/Extras/PodcastRow.js',["image!playcircle","image!pausecircle","image!playcircle","image!pausecircle","NativeModules","react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var React=require('react-native/Libraries/react-native/react-native.js');var _require=
+
+
+
+require('NativeModules');var JSAudioPlayer=_require.JSAudioPlayer;var 
+
+
+View=
+
+
+
+
+
+React.View;var Image=React.Image;var Text=React.Text;var TouchableOpacity=React.TouchableOpacity;var StyleSheet=React.StyleSheet;var Component=React.Component;
+
+var styles=StyleSheet.create({
+container:{
+flexDirection:'row',
+height:90,
+borderBottomWidth:1,
+borderBottomColor:'#444',
+alignItems:'center'},
+
+img:{
+height:30,
+width:30,
+marginLeft:10},
+
+textWrapper:{
+flex:1,
+marginLeft:10,
+marginTop:15,
+marginRight:10},
+
+txt:{
+color:'#FFF'}});var 
+
+
+
+PodcastRow=(function(_Component){_inherits(PodcastRow,_Component);
+
+function PodcastRow(props){_classCallCheck(this,PodcastRow);
+_get(Object.getPrototypeOf(PodcastRow.prototype),'constructor',this).call(this,props);
+this.state = {
+isPlaying:false,
+playImage:'playcircle',
+widthPlay:30,
+widthPause:0};}_createClass(PodcastRow,[{key:'_playAudio',value:
+
+
+
+function _playAudio(){
+var blockThis=this;
+debugger;
+if(!this.state.isPlaying){
+JSAudioPlayer.play(this.props.url,true,function(error){
+if(error){
+alert(error);}else 
+{
+blockThis.setState({
+isPlaying:true,
+playImage:'pausecircle',
+widthPlay:0,
+widthPause:30});}});}else 
+
+
+
+{
+JSAudioPlayer.pauseCurrent();
+blockThis.setState({
+isPlaying:false,
+playImage:'playcircle',
+widthPlay:30,
+widthPause:0});}}},{key:'render',value:
+
+
+
+
+function render(){
+var images={
+playcircle:require('image!playcircle'),
+pausecircle:require('image!pausecircle')};
+
+return (
+React.createElement(View,{style:[styles.container,{width:this.props.width - 10}]},
+React.createElement(TouchableOpacity,{onPress:this._playAudio.bind(this)},
+React.createElement(Image,{source:require('image!playcircle'),style:{width:this.state.widthPlay,height:this.state.widthPlay,marginLeft:10}}),
+React.createElement(Image,{source:require('image!pausecircle'),style:{width:this.state.widthPause,height:this.state.widthPause,marginLeft:10}})),
+
+React.createElement(View,{style:styles.textWrapper},
+React.createElement(Text,{style:styles.txt},this.props.podTitle))));}}]);return PodcastRow;})(Component);
+
+
+
+
+
+
+module.exports = PodcastRow;
+});
+__d('image!playcircle',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/playcircle.imageset/playcircle.png","uri":"playcircle","width":125,"height":126,"deprecated":true};
+});
+__d('image!pausecircle',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/pausecircle.imageset/pausecircle.png","uri":"pausecircle","width":384,"height":384,"deprecated":true};
 });
 __d('NodersApp/Navigators/NavigatorVideos.ios.js',["react-native/Libraries/react-native/react-native.js","NodersApp/Views/videos.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}
 
@@ -51836,10 +52243,6 @@ React.createElement(LoadingOverlay,{icon:'9CubeGrid',isVisible:this.state.isVisi
 
 module.exports = Videos;
 });
-__d('NodersApp/Endpoints.js',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {
-'videos_endpoint_search':'https://www.googleapis.com/youtube/v3/search?key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c&channelId=UC7tUsO3S7424TMcgSCUOCow&part=snippet,id&order=date&maxResults=50',
-'videos_endpoint':'https://www.googleapis.com/youtube/v3/videos?part=id,snippet,contentDetails&id={}&key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c'};
-});
 __d('NodersApp/Views/video_detail.ios.js',["NativeModules","YouTube","NativeModules","react-native/Libraries/react-native/react-native.js","NodersApp/Views/Extras/LoadingOverlay.ios.js","react-native-fbsdkshare/FBSDKShare.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var React=require('react-native/Libraries/react-native/react-native.js');
 var ShareManagerIOS=require('NativeModules').ShareManagerIOS;
 var YouTube=require('YouTube');
@@ -51866,7 +52269,8 @@ React.Component;var View=React.View;var Image=React.Image;var WebView=React.WebV
 var styles=StyleSheet.create({
 container:{
 backgroundColor:'#222',
-flex:1},
+flex:1,
+marginBottom:10},
 
 scrollviewWrapper:{
 flex:1,
@@ -52150,206 +52554,6 @@ overflow:'hidden'}});
 
 
 module.exports = YouTube;
-});
-__d('NodersApp/Views/Extras/LoadingOverlay.ios.js',["Overlay","react-native/Libraries/react-native/react-native.js","react-native-blur/index.js","react-native-spinkit/index.ios.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}var React=require('react-native/Libraries/react-native/react-native.js');
-var Overlay=require('Overlay');
-var Blur=require('react-native-blur/index.js').BlurView;
-var SpinKit=require('react-native-spinkit/index.ios.js');const 
-
-
-Component=
-React.Component;const ActivityIndicatorIOS=React.ActivityIndicatorIOS;const StyleSheet=React.StyleSheet;const View=React.View;
-
-const styles=StyleSheet.create({
-background:{
-flex:1,
-justifyContent:'center',
-alignItems:'center'}});var 
-
-
-
-LoadingView=(function(_Component){_inherits(LoadingView,_Component);
-function LoadingView(props){_classCallCheck(this,LoadingView);
-_get(Object.getPrototypeOf(LoadingView.prototype),'constructor',this).call(this,props);}_createClass(LoadingView,[{key:'render',value:
-
-
-function render(){
-return (
-React.createElement(Overlay,{isVisible:this.props.isVisible},
-React.createElement(View,{style:styles.background},
-React.createElement(SpinKit,{isVisible:this.props.isVisible,size:40,type:this.props.icon,color:'#FFFFFF'}))));}}]);return LoadingView;})(Component);
-
-
-
-
-
-
-module.exports = LoadingView;
-});
-__d('Overlay',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';
-
-
-
-
-
-
-var React=require('react-native/Libraries/react-native/react-native.js');var 
-
-View=
-
-
-
-React.View;var PropTypes=React.PropTypes;var StyleSheet=React.StyleSheet;var requireNativeComponent=React.requireNativeComponent;
-
-
-
-
-
-var Overlay=React.createClass({
-propTypes:{
-
-
-
-
-aboveStatusBar:React.PropTypes.bool,
-
-
-
-
-
-isVisible:React.PropTypes.bool},
-
-
-getDefaultProps:function(){
-return {
-aboveStatusBar:false,
-isVisible:false};},
-
-
-
-render:function(){var 
-
-isVisible=
-this.props.isVisible;
-
-if(this.props.isVisible){
-return (
-React.createElement(RNOverlay,{isVisible:true,style:styles.container,pointerEvents:'none',aboveStatusBar:this.props.aboveStatusBar},
-React.Children.map(this.props.children,React.addons.cloneWithProps)));}else 
-
-
-{
-return React.createElement(View,null);}}});
-
-
-
-
-var RNOverlay=requireNativeComponent('RNOverlay',Overlay);
-
-var styles=StyleSheet.create({
-container:{
-position:'absolute',
-top:0,
-bottom:0,
-left:0,
-right:0,
-borderWidth:0,
-backgroundColor:'transparent'}});
-
-
-
-module.exports = Overlay;
-});
-__d('react-native-blur/index.js',["react-native-blur/src/BlurView.js","react-native-blur/src/VibrancyView.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  const BlurView=require('react-native-blur/src/BlurView.js');
-const VibrancyView=require('react-native-blur/src/VibrancyView.js');
-
-module.exports = {
-BlurView:BlurView,
-VibrancyView:VibrancyView};
-});
-__d('react-native-blur/src/BlurView.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}const React=require('react-native/Libraries/react-native/react-native.js');const 
-
-requireNativeComponent=
-
-React.requireNativeComponent;const Component=React.Component;var 
-
-BlurView=(function(_Component){_inherits(BlurView,_Component);function BlurView(){_classCallCheck(this,BlurView);_get(Object.getPrototypeOf(BlurView.prototype),'constructor',this).apply(this,arguments);}_createClass(BlurView,[{key:'render',value:
-function render(){
-return React.createElement(NativeBlurView,this.props);}}]);return BlurView;})(Component);
-
-
-
-BlurView.propTypes = {
-blurType:React.PropTypes.string};
-
-
-const NativeBlurView=requireNativeComponent('BlurView',BlurView);
-
-module.exports = BlurView;
-});
-__d('react-native-blur/src/VibrancyView.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var _createClass=(function(){function defineProperties(target,props){for(var i=0;i < props.length;i++) {var descriptor=props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if('value' in descriptor)descriptor.writable = true;Object.defineProperty(target,descriptor.key,descriptor);}}return function(Constructor,protoProps,staticProps){if(protoProps)defineProperties(Constructor.prototype,protoProps);if(staticProps)defineProperties(Constructor,staticProps);return Constructor;};})();var _get=function get(object,property,receiver){if(object === null)object = Function.prototype;var desc=Object.getOwnPropertyDescriptor(object,property);if(desc === undefined){var parent=Object.getPrototypeOf(object);if(parent === null){return undefined;}else {return get(parent,property,receiver);}}else if('value' in desc){return desc.value;}else {var getter=desc.get;if(getter === undefined){return undefined;}return getter.call(receiver);}};function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor)){throw new TypeError('Cannot call a class as a function');}}function _inherits(subClass,superClass){if(typeof superClass !== 'function' && superClass !== null){throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass);}subClass.prototype = Object.create(superClass && superClass.prototype,{constructor:{value:subClass,enumerable:false,writable:true,configurable:true}});if(superClass)Object.setPrototypeOf?Object.setPrototypeOf(subClass,superClass):subClass.__proto__ = superClass;}const React=require('react-native/Libraries/react-native/react-native.js');const 
-
-requireNativeComponent=
-
-React.requireNativeComponent;const Component=React.Component;var 
-
-VibrancyView=(function(_Component){_inherits(VibrancyView,_Component);function VibrancyView(){_classCallCheck(this,VibrancyView);_get(Object.getPrototypeOf(VibrancyView.prototype),'constructor',this).apply(this,arguments);}_createClass(VibrancyView,[{key:'render',value:
-function render(){
-return React.createElement(NativeVibrancyView,this.props);}}]);return VibrancyView;})(Component);
-
-
-
-VibrancyView.propTypes = {
-blurType:React.PropTypes.string};
-
-
-const NativeVibrancyView=requireNativeComponent('VibrancyView',VibrancyView);
-
-module.exports = VibrancyView;
-});
-__d('react-native-spinkit/index.ios.js',["react-native/Libraries/react-native/react-native.js"],function(global, require, requireDynamic, requireLazy, module, exports) {  var React=require('react-native/Libraries/react-native/react-native.js');var 
-
-PropTypes=
-
-
-React.PropTypes;var requireNativeComponent=React.requireNativeComponent;var View=React.View;
-
-var Spinkit=React.createClass({
-propTypes:{
-type:PropTypes.string,
-color:PropTypes.string,
-size:PropTypes.number,
-isVisible:PropTypes.bool},
-
-
-getDefaultProps:function(){
-return {
-size:37,
-color:"#000000",
-isVisible:true};},
-
-
-
-render:function(){
-var size={height:this.props.size,width:this.props.size};
-
-if(!this.props.isVisible)return React.createElement(View,null);
-return (
-React.createElement(RNSpinkit,{
-type:this.props.type,
-size:this.props.size,
-color:this.props.color,
-style:[size,this.props.style]}));}});
-
-
-
-
-
-
-var RNSpinkit=requireNativeComponent('RNSpinkit',Spinkit);
-
-
-module.exports = Spinkit;
 });
 __d('react-native-fbsdkshare/FBSDKShare.ios.js',["FBSDKShareButton","FBSDKSendButton","FBSDKLikeControl","FBSDKShareDialog","FBSDKMessageDialog","FBSDKAppGroupAddDialog","FBSDKAppGroupJoinDialog","FBSDKAppInviteDialog","FBSDKGameRequestDialog","FBSDKSharingContent","FBSDKSharePhoto","FBSDKSharePhotoContent","FBSDKShareVideo","FBSDKShareVideoContent","FBSDKShareLinkContent","FBSDKShareOpenGraphContent","FBSDKShareOpenGraphAction","FBSDKShareOpenGraphObject","FBSDKAppGroupAddContent","FBSDKAppInviteContent","FBSDKGameRequestContent","FBSDKShareAPI"],function(global, require, requireDynamic, requireLazy, module, exports) {  'use strict';
 
@@ -53891,7 +54095,7 @@ __d('image!home',[],function(global, require, requireDynamic, requireLazy, modul
 });
 __d('image!videos',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/videos.imageset/videos.png","uri":"videos","width":48,"height":48,"deprecated":true};
 });
-__d('image!events',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/events.imageset/events.png","uri":"events","width":48,"height":48,"deprecated":true};
+__d('image!podcast',[],function(global, require, requireDynamic, requireLazy, module, exports) {  module.exports = {"__packager_asset":true,"isStatic":true,"path":"/Users/josevildosola/Downloads/NodersCLAppReact/NodersApp/iOS/NodersApp/Images.xcassets/podcast.imageset/podcast.png","uri":"podcast","width":48,"height":48,"deprecated":true};
 });
 ;require("NodersApp/index.ios.js");
 //@ sourceMappingURL=/index.ios.map

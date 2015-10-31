@@ -1,4 +1,6 @@
 var React = require('react-native');
+var EventEmitter = require('EventEmitter');
+var Subscribable = require('Subscribable');
 
 var {
 	JSAudioPlayer
@@ -37,21 +39,34 @@ var styles = StyleSheet.create({
 	}
 });
 
-class PodcastRow extends Component {
+var PodcastRow = React.createClass({	
 
-	constructor(props) {
-		super(props);
-		this.state = {
+	mixins: [Subscribable.Mixin],
+	componentWillMount: function(){
+		this.eventEmitter = new EventEmitter();
+	},
+	componentDidMount: function(){
+		this.addListenerOn(this.eventEmitter, 'playChanged', this._playbackFix);
+	},
+	getInitialState: function() {	
+		return {
 			isPlaying: false,
-			playImage: 'playcircle',
-			widthPlay: 30,
-			widthPause: 0
-		}		
-	}
+			playImage: 'playcircle'
+		};		
+	},
 
-	_playAudio() {
-		var blockThis = this;
-		debugger;
+	_playbackFix: function (tag){
+		if (tag != this.props.tag && this.state.playImage == 'pausecircle') {
+			this.setState({
+				isPlaying: false,
+				playImage: 'playcircle'
+			});
+		}
+	},
+
+	_playAudio: function() {
+		var blockThis = this;	
+		this.eventEmitter.emit('playChanged', this.props.tag);
 		if (!this.state.isPlaying) {
 			JSAudioPlayer.play(this.props.url, true, function(error){
 				if (error) {
@@ -59,9 +74,7 @@ class PodcastRow extends Component {
 				} else {
 					blockThis.setState({
 						isPlaying: true,
-						playImage: 'pausecircle',
-						widthPlay: 0,
-						widthPause: 30
+						playImage: 'pausecircle'						
 					})
 				}
 			});
@@ -69,23 +82,21 @@ class PodcastRow extends Component {
 			JSAudioPlayer.pauseCurrent();
 			blockThis.setState({
 				isPlaying: false,
-				playImage: 'playcircle',
-				widthPlay: 30,
-				widthPause: 0
+				playImage: 'playcircle'				
 			});
 		}		
-	}
+		console.log(this.state);
+	},
 
-	render() {
+	render: function() {
 		var images = {
 			playcircle: require('image!playcircle'),
 			pausecircle: require('image!pausecircle')
 		}
 		return (
 			<View style={[styles.container, {width: this.props.width - 10}]}>
-				<TouchableOpacity onPress={this._playAudio.bind(this)}>
-					<Image source={require('image!playcircle')} style={{width: this.state.widthPlay, height: this.state.widthPlay, marginLeft: 10}} />
-					<Image source={require('image!pausecircle')} style={{width: this.state.widthPause, height: this.state.widthPause, marginLeft: 10}} />
+				<TouchableOpacity onPress={this._playAudio}>
+					<Image key={images[this.state.playImage].uri} source={{uri: images[this.state.playImage].uri}} style={styles.img} />
 				</TouchableOpacity>
 				<View style={styles.textWrapper}>
 					<Text style={styles.txt}>{this.props.podTitle}</Text>
@@ -93,6 +104,6 @@ class PodcastRow extends Component {
 			</View>
 		);
 	}
-}
+});
 
 module.exports = PodcastRow;

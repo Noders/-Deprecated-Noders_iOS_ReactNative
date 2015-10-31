@@ -40,6 +40,7 @@ RCT_EXPORT_METHOD(play:(NSString*)url isNetwork:(BOOL)network callback:(RCTRespo
         callback(@[playerError.localizedDescription]);
       } else {
         [audioPlayer play];
+        callback(@[[NSNull null]]);
       }
     }
   }

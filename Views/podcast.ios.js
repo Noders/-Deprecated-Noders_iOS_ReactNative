@@ -53,6 +53,7 @@ var styles = StyleSheet.create({
     }
 });
 var rowWidth = 0;
+var rowCount = 0;
 class More extends Component {
 
     constructor(props) {
@@ -94,8 +95,9 @@ class More extends Component {
     }
 
     renderPodcast(row){
+        rowCount++;
         return (            
-            <PodcastRow image="playcircle" podTitle={row.title} width={rowWidth} url={row.enclosure}/>
+            <PodcastRow tag={rowCount} image="playcircle" podTitle={row.title} width={rowWidth} url={row.enclosure}/>
         );
     }
 

@@ -1,0 +1,3 @@
+rootProject.name = 'Noders_iOS_ReactNative'
+
+include ':app'

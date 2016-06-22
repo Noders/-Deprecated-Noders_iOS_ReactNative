@@ -1,17 +1,12 @@
 {
-  "name": "NodersApp",
+  "name": "Noders_iOS_ReactNative",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react-native": "^0.10.0",
-    "react-native-blur": "^0.6.1",
-    "react-native-fbsdkshare": "0.0.5",
-    "react-native-overlay": "^0.3.0",
-    "react-native-social-share": "^0.4.0",
-    "react-native-spinkit": "0.0.5",
-    "react-native-youtube": "^0.4.0"
+    "react": "15.1.0",
+    "react-native": "0.28.0"
   }
 }

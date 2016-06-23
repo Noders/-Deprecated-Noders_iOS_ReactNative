@@ -34,7 +34,7 @@ class Home extends Component {
     render() {
         return(
         <View style={styles.container}>
-            <Image source={require('image!noders_logo')} />            
+            <Image source={require('image!noders_logo')} />
             <TextInput placeholder="Texto" style={styles.txtInput}/>
         </View>
         );

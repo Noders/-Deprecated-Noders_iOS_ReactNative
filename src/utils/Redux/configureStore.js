@@ -1,6 +1,6 @@
 import { AsyncStorage } from 'react-native'
 import { applyMiddleware, compose, createStore } from 'redux';
-import thunk from 'redux-thunk';
+import promiseMiddleware from 'redux-promise-middleware';
 import devTools from 'remote-redux-devtools';
 import rootReducer from './modules';
 import { persistStore, autoRehydrate } from 'redux-persist';
@@ -14,7 +14,7 @@ const persistConfig = {
 }
 export default function configureStore (initialState, __DEBUG__) {
   let enhancer;
-  const middleware = applyMiddleware(thunk);
+  const middleware = applyMiddleware(promiseMiddleware);
   if(__DEBUG__){
     enhancer = compose(middleware, autoRehydrate(), devTools());
   } else {

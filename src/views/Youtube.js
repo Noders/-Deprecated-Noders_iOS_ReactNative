@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { actions as videosActions } from '../utils/Redux/modules/videos';
 
-class Splash extends Component {
+const mapStateToProps = (state) => {
+  console.log(state);
+  debugger;
+  return {};
+};
+
+class Youtube extends Component {
+  componentDidMount(){
+    console.log(this.props);
+    debugger;
+  }
   render() {
     return(
       <View style={styles.container}>
-        <Image source={require('../images/noders_logo.png')} />
-        <Text style={styles.description}>¿Por qué? Porque nos gusta</Text>
+        <Text style={styles.description}> YOUTUBE </Text>
       </View>
     );
   }
@@ -25,4 +36,4 @@ let styles = StyleSheet.create({
   }
 });
 
-export default Splash;
+export default connect(mapStateToProps, videosActions)(Youtube);

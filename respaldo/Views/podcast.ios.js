@@ -42,7 +42,7 @@ class More extends Component {
             <View style={styles.container}>
                     <ListView
                     dataSource={this.state.dataSource}
-                    renderRow={this.renderPodcast.bind(this)}/>                                                        
+                    renderRow={this.renderPodcast.bind(this)}/>
                     <LoadingOverlay icon="9CubeGrid" isVisible={this.state.isVisible} style={{flex: 1,alignSelf: 'center'}}/>
             </View>
         );

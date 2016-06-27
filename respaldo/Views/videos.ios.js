@@ -9,18 +9,18 @@ var {
 
 var styles = StyleSheet.create({
     container: {
-        flex: 1,  
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#222',
         padding: 10
     },
     thumbnail: {
-        
-        height: 280        
+
+        height: 280
     },
     rightContainer: {
-        flex: 1 
+        flex: 1
     },
     title: {
         fontSize: 20,
@@ -36,12 +36,12 @@ var styles = StyleSheet.create({
         height: 280,
         padding: 5
     },
-    nestedView: {        
+    nestedView: {
         marginTop: 200,
         height: 80,
-        flex: 1,        
+        flex: 1,
         backgroundColor: '#333',
-        opacity: 0.8        
+        opacity: 0.8
     },
     title: {
         marginTop: 8,
@@ -60,7 +60,7 @@ var styles = StyleSheet.create({
         alignItems: 'flex-end'
     },
     celda: {
-        flex: 1,        
+        flex: 1,
         height: 280,
         padding: 10,
         justifyContent: 'center'
@@ -68,7 +68,7 @@ var styles = StyleSheet.create({
     overlay: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'        
+        alignItems: 'center'
     }
 });
 
@@ -76,31 +76,31 @@ class Videos extends Component {
 
     constructor(props) {
        super(props);
-       this.state = {   
-            isVisible: false,         
+       this.state = {
+            isVisible: false,
             dataSource: new ListView.DataSource({
                 rowHasChanged: (row1, row2) => row1 !== row2
             })
-        };        
+        };
     }
 
-    componentDidMount() {            
-        this.fetchData();        
+    componentDidMount() {
+        this.fetchData();
     }
 
-    fetchData() {   
+    fetchData() {
         this.setState({
             isVisible: true
-        });     
+        });
         fetch(Endpoints.videos_endpoint_search)
         .then((response) => response.json())
-        .then((responseData) => {            
+        .then((responseData) => {
             var videoArray = "";
             responseData.items.forEach(function(entry){
                 if (entry.id.kind === "youtube#video") {
                     videoArray += entry.id.videoId + ",";
-                }                
-            });             
+                }
+            });
             var adjustedEndpoint = Endpoints.videos_endpoint.replace('{}',videoArray);
             fetch(adjustedEndpoint).then((response2) => response2.json())
             .then((responseData2) => {
@@ -108,7 +108,7 @@ class Videos extends Component {
                     dataSource: this.state.dataSource.cloneWithRows(responseData2.items),
                     isVisible: false
                 });
-            }).catch((error) => {                            
+            }).catch((error) => {
                 console.log(error);
             }).done();
         }).catch((error) => {
@@ -130,15 +130,15 @@ class Videos extends Component {
     renderVideo(video) {
        return (
             <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(video)}}>
-                <View style={styles.celda}>                                        
+                <View style={styles.celda}>
                     <Image style={styles.logo} source={{uri: video.snippet.thumbnails.high.url}}>
                         <View style={styles.nestedView}>
                             <Text style={styles.title}>{video.snippet.title}</Text>
                             <Text style={styles.duration}>{this.convert_time(video.contentDetails.duration)}</Text>
                         </View>
-                    </Image>                                        
+                    </Image>
                 </View>
-            </TouchableHighlight>            
+            </TouchableHighlight>
         );
     }
 
@@ -151,9 +151,9 @@ class Videos extends Component {
             <View style={styles.container}>
                 <ListView
                 dataSource={this.state.dataSource}
-                renderRow={this.renderVideo.bind(this)}/>                                                        
+                renderRow={this.renderVideo.bind(this)}/>
                 <LoadingOverlay icon="9CubeGrid" isVisible={this.state.isVisible} style={{flex: 1,alignSelf: 'center'}}/>
-            </View>            
+            </View>
         );
     }
 }

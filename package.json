@@ -1,17 +1,31 @@
 {
-  "name": "NodersApp",
+  "name": "Noders_iOS_ReactNative",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node_modules/react-native/packager/packager.sh"
+    "start": "node node_modules/react-native/local-cli/cli.js start"
   },
   "dependencies": {
-    "react-native": "^0.10.0",
-    "react-native-blur": "^0.6.1",
-    "react-native-fbsdkshare": "0.0.5",
-    "react-native-overlay": "^0.3.0",
-    "react-native-social-share": "^0.4.0",
-    "react-native-spinkit": "0.0.5",
-    "react-native-youtube": "^0.4.0"
+    "react": "15.1.0",
+    "react-native": "0.28.0",
+    "react-native-blur": "^1.0.0",
+    "react-native-overlay": "^0.4.2",
+    "react-native-router-flux": "^3.30.2",
+    "react-native-spinkit": "^0.1.2",
+    "react-native-tab-navigator": "^0.3.2",
+    "react-native-vector-icons": "^2.0.3",
+    "react-native-youtube": "^0.7.2",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-persist": "^3.2.2",
+    "redux-promise-middleware": "^3.0.2",
+    "redux-saga": "^0.10.5",
+    "remote-redux-devtools": "^0.3.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.0",
+    "eslint": "^2.13.1",
+    "eslint-plugin-react": "^5.2.2",
+    "eslint-plugin-react-native": "^1.1.0"
   }
 }

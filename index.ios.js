@@ -1,78 +1,73 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- */
-'use strict';
+import React, { Component } from 'react';
+import { AppRegistry, View, StyleSheet } from 'react-native';
+import configureStore from './src/utils/Redux/configureStore';
+import { Actions, Scene, Router } from 'react-native-router-flux';
 
-var React = require('react-native');
-var Home = require('./Views/home.ios.js');
-var Podcast = require('./Views/podcast.ios.js');
-var VideosNav = require('./Navigators/NavigatorVideos.ios.js');
+import TopTabBar from './src/components/TabBar/tabBar';
+import Medium from './src/views/Medium';
+import Podcast from './src/views/Podcast';
+import Splash from './src/views/Splash';
+import Youtube from './src/views/Youtube';
+import YoutubeDetail from './src/views/YoutubeDetail';
 
-var {
-    AppRegistry,
-    TabBarIOS,
-    Component,
-    StyleSheet
-} = React;
+const __DEBUG__ = true;
+const store = configureStore({}, __DEBUG__);
+const scenes = Actions.create(
+  <Scene hideNavBar key="root" >
+    <Scene
+      initial
+      component={Splash}
+      key="splash"
+      store={store}
+      title="Splash"
+      type="replace" />
+    <Scene
+      component={Podcast}
+      key="podcast"
+      store={store}
+      title="Podcast"
+      type="replace" />
+    <Scene
+      component={Medium}
+      key="medium"
+      store={store}
+      title="Medium"
+      type="replace" />
+    <Scene
+      component={Youtube}
+      key="youtube"
+      store={store}
+      title="Youtube"
+      type="replace" />
+    <Scene
+      component={YoutubeDetail}
+      key="youtubeDetail"
+      store={store}
+      title="YoutubeDetail"
+      type="replace" />
+  </Scene>
+);
 
-var styles = StyleSheet.create({
-    tab: {
-        backgroundColor: '#222'
-    }
-});
-
-class NodersApp extends Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedTab: 'home'
-        };
-    }
-    
-    render() {
-        return(
-            <TabBarIOS
-                style={styles.tab}
-                selectedTab={this.state.selectedTab}
-                barTintColor='#000'
-                tintColor='#1ec503'>
-                <TabBarIOS.Item
-                    title='Inicio'
-                    selected={this.state.selectedTab === 'home'}
-                    icon={{uri:require('image!home')}}                       
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'home'
-                        });
-                    }}>
-                <Home />
-                </TabBarIOS.Item>
-                <TabBarIOS.Item
-                    title='Videos'
-                    selected={this.state.selectedTab === 'videos'}
-                    icon={{uri:require('image!videos')}}                        
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'videos'
-                        });
-                    }}>
-                <VideosNav />
-                </TabBarIOS.Item>
-                <TabBarIOS.Item
-                    title='Podcast'
-                    selected={this.state.selectedTab === 'podcast'}
-                    icon={{uri:require('image!podcast')}}                         
-                    onPress={() => {
-                        this.setState({
-                            selectedTab: 'podcast'
-                        });
-                    }}>
-                <Podcast />
-                </TabBarIOS.Item>                    
-            </TabBarIOS>
-        )
-    }
+class Noders_iOS_ReactNative extends Component {
+  constructor() {
+    super();
+  }
+  render(){
+    return (
+      <View
+        style={styles.container}
+      >
+        <TopTabBar/>
+        <Router hideNavBar scenes={scenes}/>
+      </View>
+    )
+  }
 }
 
-AppRegistry.registerComponent('NodersApp', () => NodersApp);
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+});
+
+AppRegistry.registerComponent('Noders_iOS_ReactNative', () => Noders_iOS_ReactNative);

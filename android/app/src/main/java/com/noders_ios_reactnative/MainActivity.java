@@ -1,6 +1,9 @@
 package com.noders_ios_reactnative;
 
 import com.facebook.react.ReactActivity;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.react.rnspinkit.RNSpinkitPackage;
+import com.cmcewen.blurview.BlurViewPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 
@@ -34,7 +37,10 @@ public class MainActivity extends ReactActivity {
     @Override
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
-            new MainReactPackage()
+            new MainReactPackage(),
+            new VectorIconsPackage(),
+            new RNSpinkitPackage(),
+            new BlurViewPackage()
         );
     }
 }

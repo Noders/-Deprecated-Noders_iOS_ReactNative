@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
-class Splash extends Component {
+class Medium extends Component {
   render() {
     return(
       <View style={styles.container}>
-        <Image source={require('../images/noders_logo.png')} />
-        <Text style={styles.description}>¿Por qué? Porque nos gusta</Text>
+        <Text style={styles.description}> MEDIUM </Text>
       </View>
     );
   }
@@ -25,4 +24,4 @@ let styles = StyleSheet.create({
   }
 });
 
-export default Splash;
+export default Medium;

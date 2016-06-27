@@ -33,6 +33,12 @@ local.properties
 #
 node_modules/
 npm-debug.log
+# ConfigFile
+*.config.js
+*.config.js
+config.*.js
+config.*.*
+config.*
 
 # BUCK
 buck-out/

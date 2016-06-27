@@ -19,6 +19,7 @@
     "redux": "^3.5.2",
     "redux-persist": "^3.2.2",
     "redux-promise-middleware": "^3.0.2",
+    "redux-saga": "^0.10.5",
     "remote-redux-devtools": "^0.3.3"
   },
   "devDependencies": {

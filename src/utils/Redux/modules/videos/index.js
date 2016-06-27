@@ -1,28 +1,24 @@
 import createReducer from '../../createReducer';
-const videosUrl = {
-	'videos_endpoint_search': 'https://www.googleapis.com/youtube/v3/search?key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c&channelId=UC7tUsO3S7424TMcgSCUOCow&part=snippet,id&order=date&maxResults=50',
-	'videos_endpoint': 'https://www.googleapis.com/youtube/v3/videos?part=id,snippet,contentDetails&id={}&key=AIzaSyDGuMR3AHQ5kmXW5hdD_Ia9iEuv7V4LA-c'
-}
-
+import { fetchVideos } from '../../../api/videos';
 
 // ------------------------------------
 // Constants
 // ------------------------------------
-const VIDEOS_GET = 'VIDEOS_GET';
-const VIDEOS_GET_FULLFILLED = 'VIDEOS_GET_FULLFILLED';
-const VIDEOS_GET_REJECTED = 'VIDEOS_GET_REJECTED';
+const VIDEOS_RECEIVE = 'VIDEOS_RECEIVE';
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const videosGet = () => ({
-  type: VIDEOS_GET,
-  payload: {
-		promise: fetch(videosUrl.videos_endpoint_search)
-	}
+export const videosFetch = () =>
+  fetchVideos().then(data => {
+    return videosReceive(data);
+  })
+const videosReceive = (payload) => ({
+  type: VIDEOS_RECEIVE,
+  payload
 });
 export const actions = {
-  videosGet,
+  videosFetch
 };
 
 
@@ -30,7 +26,7 @@ export const actions = {
 // State
 // ------------------------------------
 const initialState = {
-  videos: {},
+  videos: [],
 };
 
 
@@ -38,22 +34,28 @@ const initialState = {
 // Reducer
 // ------------------------------------
 export default createReducer(initialState, {
-  [VIDEOS_GET_FULLFILLED]  (state, payload = null) {
-    debugger;
-    if (payload !== null) {
-      return {...state, videos: payload}
-    }
-    return state;
-  },
-  [VIDEOS_GET_REJECTED]  (state, payload = null) {
-    debugger;
-    if (payload !== null) {
-      return {...state, videos: payload}
-    }
-    return state;
-  },
-  [VIDEOS_GET]  (state, payload = null) {
-    debugger;
-    return state;
+  [VIDEOS_RECEIVE]  (state, payload = null) {
+    const newVids = [];
+    //Compares if recieved videos already existss in the current state, if they do, we update the state.
+    payload.items.forEach(el => {
+      if (el.kind === "youtube#video") {
+        if (state.videos.length > 0) {
+          state.videos.forEach((stateEl, stateI) => {
+            if (stateEl.id === el.id ) {
+              if(stateEl.etag === el.etag){
+                newVids.push(stateEl);
+              } else {
+                newVids.push(el);
+              }
+            };
+          });
+        } else {
+          newVids.push(el);
+        }
+      }
+    });
+    const newState = {...state};
+    newState.videos = newVids
+    return newState;
   },
 })

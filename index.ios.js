@@ -9,19 +9,6 @@ import Podcast from './src/views/Podcast';
 import Splash from './src/views/Splash';
 import Youtube from './src/views/Youtube';
 import YoutubeDetail from './src/views/YoutubeDetail';
-/*
-import Menu from './src/views/Menu';
-import Tickets from './src/views/Tickets';
-import Home from './src/views/Home';
-import Venue from './src/views/Venue';
-import Notifications from './src/utils/Notifications';
-
-<Scene component={Home} direction="horizontal" key="home" store={store} title="Locales" type="replace"/>
-<Scene component={Venue} direction="horizontal" key="venue" store={store} />
-<Scene component={Tickets} direction="vertical" key="tickets" store={store} />
-<Scene component={Menu} direction="vertical" key="menu" store={store} />
-<Notifications store={store}/>
-*/
 
 const __DEBUG__ = true;
 const store = configureStore({}, __DEBUG__);

@@ -1,7 +1,6 @@
 import config from '../config/config';
 import querystring from 'querystring';
 import { parse, format } from 'url';
-import ytld from 'ytdl-core';
 const Endpoints = {
     videos_endpoint_search: `https://www.googleapis.com/youtube/v3/search?key=${config.youtube.key}&channelId=${config.youtube.channelId}&part=snippet,id&order=date&maxResults=50`,
     videos_endpoint: `https://www.googleapis.com/youtube/v3/videos?part=id,snippet,contentDetails&id={}&key=${config.youtube.key}`

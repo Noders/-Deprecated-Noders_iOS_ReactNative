@@ -1,5 +1,4 @@
 package com.noders_ios_reactnative;
-
 import com.facebook.react.ReactActivity;
 import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;

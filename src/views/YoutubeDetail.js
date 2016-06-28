@@ -1,26 +1,28 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
+import VideoPreview from '../components/videoPreview/videoPreview';
+import { fetchVideoData } from '../utils/api/videos';
 
 class YoutubeDetail extends Component {
+  componentDidMount(){
+    fetchVideoData(this.props.video)
+  }
   render() {
+    console.log(this.props)
     return(
       <View style={styles.container}>
-        <Text style={styles.description}> YOUTUBE DETAIL </Text>
+        <VideoPreview video={this.props.video} />
       </View>
     );
   }
 }
 let styles = StyleSheet.create({
-  description: {
-    fontSize: 20,
-    textAlign: 'center',
-    color: '#FFFFFF',
-  },
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#222'
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
   }
 });
 

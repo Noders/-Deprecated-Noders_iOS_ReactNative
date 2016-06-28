@@ -1,6 +1,7 @@
 package com.noders_ios_reactnative;
 
 import com.facebook.react.ReactActivity;
+import com.brentvatne.RCTVideo.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.cmcewen.blurview.BlurViewPackage;
@@ -38,6 +39,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new ReactVideoPackage(),
             new VectorIconsPackage(),
             new RNSpinkitPackage(),
             new BlurViewPackage()

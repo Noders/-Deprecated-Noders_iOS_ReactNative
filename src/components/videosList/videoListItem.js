@@ -1,9 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 import { Text, StyleSheet, View, TouchableHighlight, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class videosListItem extends Component{
   showVideoDetail(video){
     console.log(video);
+    Actions.youtubeDetail(video)
   }
   convert_time(duration) {
       return duration.replace("PT","").replace("H",":").replace("M",":").replace("S","");

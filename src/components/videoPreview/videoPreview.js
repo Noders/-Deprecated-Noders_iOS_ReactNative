@@ -13,7 +13,7 @@ export default class VideoPlayer extends Component {
   render() {
     return (
       <View style={styles.container}>
-        
+
       </View>
     )
   }

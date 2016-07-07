@@ -2,8 +2,6 @@ import config from '../config/config';
 
 export const fetchMediumPosts = () => {
 
-  console.log(config);
-  debugger;
   var myHeaders = new Headers();
   myHeaders.append('Authorization', `Bearer ${config.medium.token}`);
   myHeaders.append('Content-Type', 'application/json');

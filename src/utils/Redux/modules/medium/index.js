@@ -16,7 +16,6 @@ const MEDIUM_CLEAR = 'MEDIUM_CLEAR';
 // ------------------------------------
 export const mediumFetch = () =>
   fetchMediumPosts().then(data => {
-    debugger;
     return mediumRecieve(data);
   })
 const mediumRecieve = (payload) => ({
@@ -46,7 +45,6 @@ const initialState = {
 // ------------------------------------
 export default createReducer(initialState, {
   [MEDIUM_RECEIVE]  (state, payload = null) {
-    debugger;
     const newMedium = [];
     const newState = {...state};
     newState.newMedium = newMedium;

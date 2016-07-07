@@ -295,9 +295,7 @@ exports.parallel = function(funcs, callback) {
       return;
     }
     results[index] = result;
-    debugger;
     if (++funcsDone === len) {
-      debugger;
       callback(null, results);
     }
   }

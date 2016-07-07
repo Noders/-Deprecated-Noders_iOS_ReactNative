@@ -46,7 +46,10 @@ export default createReducer(initialState, {
   [PODCAST_RECEIVE]  (state, payload = null) {
     const newChapters = [];
     payload.forEach(el => {
-      newChapters.push(el);
+      const fileName = el.enclosure.$.url.split('/').pop();
+      const newEl = Object.assign({}, el, {fileName});
+      newChapters.push(newEl);
+
       //Compares if recieved podcasts already existss in the current state, if they do, we update the state.
       /*
       if (state.podcasts.length > 0) {

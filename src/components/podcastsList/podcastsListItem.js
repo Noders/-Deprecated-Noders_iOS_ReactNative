@@ -1,27 +1,25 @@
 import React, { Component, PropTypes } from 'react';
 import { Text, StyleSheet, View, TouchableHighlight, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
 export default class podcastssListItem extends Component{
   showDetails(podcast){
-    console.log(podcast);
+    Actions.podcastDetail({podcast})
   }
   render() {
     const { podcast } = this.props;
     return(
-      <TouchableHighlight
-          underlayColor='#efefef'
-          onPress={() => {this.showDetails(podcast)}}
-        >
-        <View style={styles.celda}>
-          <View style={styles.titleWrapper}>
-            <Text style={styles.title}>{podcast.title}</Text>
-          </View>
-          <View style={styles.downRow}>
-            <Text style={styles.duration}>{podcast.newPubDate}</Text>
-            <Text style={styles.duration}>{podcast['itunes:duration']}</Text>
-          </View>
-        </View>
-      </TouchableHighlight>
+        <TouchableHighlight underlayColor='#efefef' onPress={() => {this.showDetails(podcast)}}>
+            <View style={styles.celda}>
+                <View style={styles.titleWrapper}>
+                    <Text style={styles.title}>{podcast.title}</Text>
+                </View>
+                <View style={styles.downRow}>
+                    <Text style={styles.duration}>{podcast.newPubDate}</Text>
+                    <Text style={styles.duration}>{podcast['itunes:duration']}</Text>
+                </View>
+            </View>
+        </TouchableHighlight>
     );
   }
 }

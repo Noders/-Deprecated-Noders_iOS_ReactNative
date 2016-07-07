@@ -4,25 +4,24 @@ import { Actions } from 'react-native-router-flux';
 
 export default class videosListItem extends Component{
   showVideoDetail(video){
-    console.log(video);
     Actions.youtubeDetail(video)
   }
   convert_time(duration) {
-      return duration.replace("PT","").replace("H",":").replace("M",":").replace("S","");
+    return duration.replace("PT","").replace("H",":").replace("M",":").replace("S","");
   }
   render() {
     const {video} = this.props;
     return(
-      <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(video)}}>
-          <View style={styles.celda}>
-              <Image style={styles.logo} source={{uri: video.snippet.thumbnails.high.url}}>
-                  <View style={styles.nestedView}>
-                      <Text style={styles.title}>{video.snippet.title}</Text>
-                      <Text style={styles.duration}>{this.convert_time(video.contentDetails.duration)}</Text>
-                  </View>
-              </Image>
-          </View>
-      </TouchableHighlight>
+        <TouchableHighlight underlayColor='#CCC' onPress={() => {this.showVideoDetail(video)}}>
+            <View style={styles.celda}>
+                <Image style={styles.logo} source={{uri: video.snippet.thumbnails.high.url}}>
+                    <View style={styles.nestedView}>
+                        <Text style={styles.title}>{video.snippet.title}</Text>
+                        <Text style={styles.duration}>{this.convert_time(video.contentDetails.duration)}</Text>
+                    </View>
+                </Image>
+            </View>
+        </TouchableHighlight>
     );
   }
 }

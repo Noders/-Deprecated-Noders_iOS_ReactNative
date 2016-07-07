@@ -34,24 +34,28 @@ class CustomTabBar extends Component {
         </TabBarButton>
 
 
-        <TabBarButton
-          style={{
-            flex: 1,
-            flexDirection: 'column',
-            paddingTop: 25,
-            paddingBottom: 10,
-          }}
-          activeOpacity={0.5}
-          underlayColor={'#78b14c'}
-          onClick={() => {
-            Actions.medium();
-          }}
-        >
-          <Fontawesomeicons
-            name="medium"
-            size={ 30 }
-            color="#fafafa" />
-        </TabBarButton>
+        {
+          /*
+          <TabBarButton
+            style={{
+              flex: 1,
+              flexDirection: 'column',
+              paddingTop: 25,
+              paddingBottom: 10,
+            }}
+            activeOpacity={0.5}
+            underlayColor={'#78b14c'}
+            onClick={() => {
+              Actions.medium();
+            }}
+          >
+            <Fontawesomeicons
+              name="medium"
+              size={ 30 }
+              color="#fafafa" />
+          </TabBarButton>
+          */
+        }
 
 
         <TabBarButton

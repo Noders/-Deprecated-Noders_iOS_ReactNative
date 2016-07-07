@@ -28,5 +28,4 @@ export const fetchVideos = () => {
 
 
 export const fetchVideoData = (id) => {
-	debugger;
 }

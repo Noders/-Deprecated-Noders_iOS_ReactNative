@@ -1,52 +1,73 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { AppRegistry, View, StyleSheet } from 'react-native';
+import configureStore from './src/utils/Redux/configureStore';
+import { Actions, Scene, Router } from 'react-native-router-flux';
+
+import TopTabBar from './src/components/TabBar/tabBar';
+import Medium from './src/views/Medium';
+import Podcast from './src/views/Podcast';
+import Splash from './src/views/Splash';
+import Youtube from './src/views/Youtube';
+import YoutubeDetail from './src/views/YoutubeDetail';
+
+const __DEBUG__ = true;
+const store = configureStore({}, __DEBUG__);
+const scenes = Actions.create(
+  <Scene hideNavBar key="root" >
+    <Scene
+      initial
+      component={Splash}
+      key="splash"
+      store={store}
+      title="Splash"
+      type="replace" />
+    <Scene
+      component={Podcast}
+      key="podcast"
+      store={store}
+      title="Podcast"
+      type="replace" />
+    <Scene
+      component={Medium}
+      key="medium"
+      store={store}
+      title="Medium"
+      type="replace" />
+    <Scene
+      component={Youtube}
+      key="youtube"
+      store={store}
+      title="Youtube"
+      type="replace" />
+    <Scene
+      component={YoutubeDetail}
+      key="youtubeDetail"
+      store={store}
+      title="YoutubeDetail"
+      type="replace" />
+  </Scene>
+);
 
 class Noders_iOS_ReactNative extends Component {
-  render() {
+  constructor() {
+    super();
+  }
+  render(){
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Shake or press menu button for dev menu
-        </Text>
+      <View
+        style={styles.container}
+      >
+        <TopTabBar/>
+        <Router hideNavBar scenes={scenes}/>
       </View>
-    );
+    )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('Noders_iOS_ReactNative', () => Noders_iOS_ReactNative);

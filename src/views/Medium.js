@@ -1,7 +1,23 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
+import { connect } from 'react-redux';
+import { actions as mediumActions } from '../utils/Redux/modules/medium';
+
+const mapStateToProps = (state) => {
+  return {
+    medium: state.medium.medium
+  }
+}
 
 class Medium extends Component {
+  static propTypes = {
+    mediumFetch: PropTypes.func.isRequired,
+  };
+
+  componentDidMount(){
+    this.props.mediumFetch();
+  }
+
   render() {
     return(
       <View style={styles.container}>
@@ -25,3 +41,4 @@ let styles = StyleSheet.create({
 });
 
 export default Medium;
+export default connect(mapStateToProps, mediumActions)(Medium);

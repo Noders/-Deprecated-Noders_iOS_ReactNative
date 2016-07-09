@@ -6,6 +6,7 @@ import { Actions, Scene, Router } from 'react-native-router-flux';
 import TopTabBar from './src/components/TabBar/tabBar';
 import Medium from './src/views/Medium';
 import Podcast from './src/views/Podcast';
+import PodcastDetail from './src/views/PodcastDetail';
 import Splash from './src/views/Splash';
 import Youtube from './src/views/Youtube';
 import YoutubeDetail from './src/views/YoutubeDetail';
@@ -26,6 +27,12 @@ const scenes = Actions.create(
       key="podcast"
       store={store}
       title="Podcast"
+      type="replace" />
+    <Scene
+      component={PodcastDetail}
+      key="podcastDetail"
+      store={store}
+      title="PodcastDetail"
       type="replace" />
     <Scene
       component={Medium}

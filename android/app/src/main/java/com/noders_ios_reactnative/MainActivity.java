@@ -1,11 +1,13 @@
 package com.noders_ios_reactnative;
-
 import com.facebook.react.ReactActivity;
+import com.zmxv.RNSound.RNSoundPackage;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import com.brentvatne.react.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
-import com.cmcewen.blurview.BlurViewPackage;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.rnfs.RNFSPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,9 +40,12 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+            new RNSoundPackage(),
+            new RNFetchBlobPackage(),
+            new ReactVideoPackage(),
             new VectorIconsPackage(),
             new RNSpinkitPackage(),
-            new BlurViewPackage()
+            new RNFSPackage()
         );
     }
 }
